@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,3 +127,27 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import environ
+import os
+
+# Initialize environ
+env = environ.Env()
+
+# Read the .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# Read .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+# Email backend settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Get environment variables with fallback values
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')  # Replace with your default email host
+EMAIL_PORT = os.getenv('EMAIL_PORT', 587)  # Default email port
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True').lower() in ('true', '1', 'yes')  # Boolean handling
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')  # No fallback for sensitive data
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')  # No fallback for sensitive data
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'feed.teach.love@gmail.com')  # Provide a fallback
+

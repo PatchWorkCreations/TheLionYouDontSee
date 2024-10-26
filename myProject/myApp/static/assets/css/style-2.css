@@ -473,6 +473,13 @@ a:hover, a:focus {
   padding: 100px 0px 100px 0px;
 }
 
+.banner-main-3 .banner-img img.larger-image {
+  max-width: 110%; /* Increase size slightly */
+  transform: scale(1.1); /* Make the image slightly bigger */
+  margin-left: -10px; /* Adjust for centering if needed */
+}
+
+
 .main-banner-content h1 {
   font-size:68px;
   line-height: 78px;
@@ -526,25 +533,25 @@ a:hover, a:focus {
 .cta-3 {
   padding-top:70px
 }
-.cta-wrapper{
-  position:relative;
-  background:#4054B2;
-  background:url("../images/about/cta-bg.jpg") fixed 50% 50%;
-  background-size:cover;
-  border-radius:15px;
-  padding:80px 40px 90px 40px;
+.cta-wrapper {
+  position: relative;
+  background: #4054B2;
+  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 80px 40px 90px 40px;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
-.cta-wrapper:before{
-  position:absolute;
-  content:"";
+.cta-wrapper:before {
+  position: absolute;
+  content: "";
   left: 0px;
-  top:0px;
-  width:100%;
-  height:100%;
-  background:#4054B2;
-  opacity: .95;
-  border-radius:15px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: #4054B2;
+  opacity: 0.95;
+  border-radius: 15px;
 }
 
 
@@ -882,9 +889,13 @@ CSubscribe Section
 -----------------------------*/
 
 .bg-main{
-  background:#4054B2;
-  padding:60px 50px 50px;
-  border-radius:10px;
+  position: relative;
+  background: #4054B2;
+  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 80px 40px 90px 40px;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 .cta-home {
   margin-top: -90px;
@@ -907,6 +918,7 @@ CSubscribe Section
 .subscribe-form .form-control{
   border:1px solid rgba(255, 255, 255, 0.1);
   background:transparent;
+  color: #fff !important;
 }
 .subscribe-form ::placeholder{
   color:#fff;

@@ -489,15 +489,16 @@ Cta
 .cta {
   margin-top: -70px;
 }
-.cta-wrapper{
-  position:relative;
-  background:#4054B2;
-  background:url("../images/about/cta-bg.jpg") fixed 50% 50%;
-  background-size:cover;
-  border-radius:15px;
-  padding:80px 40px 90px 40px;
+.cta-wrapper {
+  position: relative;
+  background: #4054B2;
+  background: url("/static/assets/images/about/cta-bg1.jpg") fixed center center;
+  background-size: 110%; /* Slightly larger */
+  border-radius: 15px;
+  padding: 80px 40px 90px 40px;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
+
 .cta-wrapper:before{
   position:absolute;
   content:"";

@@ -4,6 +4,60 @@
 {% block title %}Home - Treaser Book Landing{% endblock %}
 
 {% block content %}
+<style>
+    .cta-wrapper {
+  position: relative;
+  background: #4054B2;
+  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 80px 40px 90px 40px;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+.cta-wrapper:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: #4054B2;
+  opacity: 0.95;
+  border-radius: 15px;
+}
+
+.bg-main{
+  position: relative;
+  background: #4054B2;
+  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
+  background-size: cover;
+  border-radius: 15px;
+  padding: 80px 40px 90px 40px;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.bg-main:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: #4054B2;
+  opacity: 0.95;
+  border-radius: 15px;
+}
+
+#contactMessage {
+    display: none;         /* Initially hidden */
+    text-align: center;     /* Center the text */
+    font-weight: bold;      /* Make the text bold */
+    color: green;           /* Set the color */
+    margin-top: 20px;       /* Add some space above */
+}
+
+</style>
+
 <section class="banner-main-3" id="banner-3">
     <div class="container">
         <div class="row">
@@ -27,7 +81,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img">
-                    <img src="{% static 'assets/images/about/book.png' %}" alt="Book Image" class="img-fluid w-100">
+                    <img src="{% static 'assets/images/about/book1.png' %}" alt="Book Image" class="img-fluid w-100">
                 </div>
             </div>
         </div>
@@ -77,19 +131,19 @@
         <div class="row">
             <div class="col-lg-5 col-md-6">
                 <div class="book-preview">
-                    <img src="{% static 'assets/images/about/kindle.png' %}" class="background-device img-fluid" alt="Kindle Preview">
+                    <img src="{% static 'assets/images/about/book1.png' %}" class="background-device img-fluid" alt="Kindle Preview">
                     <div class="owl-book owl-carousel owl-theme" style="opacity: 1; display: block;">
                         <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page.png' %}" alt="Book Page" class="img-fluid">
+                            <img src="{% static 'assets/images/about/book_page01.png' %}" alt="Book Page" class="img-fluid">
                             <div class="overlay">
-                                <a href="{% static 'assets/images/about/book_page.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
+                                <a href="{% static 'assets/images/about/book_page00.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </div>
                         </div>
 
                         <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page2.png' %}" alt="Book Page 2" class="img-fluid">
+                            <img src="{% static 'assets/images/about/book_page02.png' %}" alt="Book Page 2" class="img-fluid">
                             <div class="overlay">
                                 <a href="{% static 'assets/images/about/book_page2.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
                                     <i class="ti-fullscreen"></i>
@@ -98,7 +152,7 @@
                         </div>
 
                         <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page.png' %}" alt="Book Page" class="img-fluid">
+                            <img src="{% static 'assets/images/about/book_page03.png' %}" alt="Book Page" class="img-fluid">
                             <div class="overlay">
                                 <a href="{% static 'assets/images/about/book_page.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
                                     <i class="ti-fullscreen"></i>
@@ -127,7 +181,7 @@
                         </div>
                         <div class="about-item">
                             <h5>Timeless Inspiration</h5>
-                            <p>Filled with lessons that remain relevant across generations, *The Lion You Don’t See* serves as an evergreen source of motivation and guidance.</p>
+                            <p>Filled with lessons that remain relevant across generations, The Lion You Don’t See serves as an evergreen source of motivation and guidance.</p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +248,7 @@
                     </div>
 
                     <p class="mb-4">
-                        Maria Gregory is a natural storyteller and visionary, whose heart beats at the core of *The Lion You Don’t See*. As the founder of the I RiseUp Group of Companies—including I Riseup Academy, I Riseup Foundation, and CLICK (Computer Learning for Inner City Kids)—Maria is on a mission to empower people to find their inner strength and realize the incredible possibilities that life has to offer.
+                        Maria Gregory is a natural storyteller and visionary, whose heart beats at the core of The Lion You Don’t See. As the founder of the I RiseUp Group of Companies—including I Riseup Academy, I Riseup Foundation, and CLICK (Computer Learning for Inner City Kids)—Maria is on a mission to empower people to find their inner strength and realize the incredible possibilities that life has to offer.
                     </p>
 
                     <p class="mb-4">
@@ -206,7 +260,7 @@
                     </p>
 
                     <p class="mb-4">
-                        *The Lion You Don’t See* is a project that’s especially close to Maria’s heart. Inspired by her desire to help readers of all ages uncover the quiet, often hidden strength inside them, she believes that through storytelling, people can begin to see beyond their struggles and recognize the courage they didn’t even know they had.
+                        The Lion You Don’t See is a project that’s especially close to Maria’s heart. Inspired by her desire to help readers of all ages uncover the quiet, often hidden strength inside them, she believes that through storytelling, people can begin to see beyond their struggles and recognize the courage they didn’t even know they had.
                     </p>
 
                     <p class="mb-4">
@@ -229,6 +283,7 @@
             </div>
 
             <div class="col-lg-6">
+                <div id="subscribe-message" style="display: none; color: rgb(255, 255, 255); margin-top: 10px;"></div>
                 <form action="{% url 'subscribe' %}" method="post" class="subscribe-form">
                     {% csrf_token %}
                     <div class="form-group">
@@ -261,13 +316,6 @@
             <div class="col-lg-12">
                 <form class="contact__form form-row contact-form w-100" method="post" action="{% url 'contact' %}" id="contactForm">
                     {% csrf_token %}
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                Your message was sent successfully.
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row justify-content-center w-100">
                         <div class="col-lg-10">
@@ -288,11 +336,87 @@
                             </div>
                         </div>
                     </div>
+                    <div class="alert alert-success contact__msg" id="contactMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
+                        Thank you for getting in touch!
+                    </div>
                 </form> 
             </div>         
         </div>
     </div>
 </section>
 
+<script>
+    document.querySelector(".subscribe-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        // Gather form data
+        const formData = new FormData(this);
+
+        // Send AJAX request
+        fetch("{% url 'subscribe' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": formData.get("csrfmiddlewaretoken") // Include CSRF token
+            },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                // Display the success message
+                document.getElementById("subscribe-message").innerText = data.message;
+                document.getElementById("subscribe-message").style.display = "block";
+
+                // Clear the form
+                document.querySelector(".subscribe-form").reset();
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent normal form submission
+
+    const formData = new FormData(this);
+
+    // Send AJAX request
+    fetch("{% url 'contact' %}", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": formData.get("csrfmiddlewaretoken")  // Include CSRF token
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Parsed data:", data);  // Log parsed JSON data to inspect structure
+
+        const contactMessage = document.getElementById("contactMessage");
+
+        // Display the success or error message
+        if (data.message) {
+            // Display only the 'message' field's value
+            contactMessage.textContent = data.message;
+            contactMessage.style.display = "block";
+            document.getElementById("contactForm").reset();
+        } else if (data.error) {
+            contactMessage.textContent = data.error;
+            contactMessage.style.display = "block";
+        } else {
+            contactMessage.textContent = "Unexpected response structure.";
+            contactMessage.style.display = "block";
+            console.error("Unexpected structure:", data);
+        }
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+        const contactMessage = document.getElementById("contactMessage");
+        contactMessage.textContent = "An error occurred. Please try again.";
+        contactMessage.style.display = "block";
+    });
+});
+
+
+</script>
 
 {% endblock %}
