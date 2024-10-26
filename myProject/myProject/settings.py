@@ -18,8 +18,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'thelionyoudontsee-production.up.railway.app',
-    'www.thelionyoudontsee.com'
-    'thelionyoudontsee.com'
+    'www.thelionyoudontsee.com',
+    'thelionyoudontsee.com',
     '127.0.0.1',  # If you also want to allow local development
     'localhost',
 ]
