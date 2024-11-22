@@ -489,17 +489,49 @@ h1 {
   font-size: 20px;
 }
 
-.book-preview {
-  display: inline-block;
-  max-width: 400px;
-  width: 100%;
+/* General fixes for the book section */
+.book-preview img.background-device {
+  max-width: 100%;
+  height: auto; /* Ensure it doesn't overflow */
   position: relative;
+  z-index: 1;
 }
 
-.book-preview .background-device {
-  width: 100%;
-  position: absolute;
+.owl-book {
+  margin-top: 1rem; /* Ensure spacing between elements */
+  z-index: 2;
 }
+
+/* Adjust layout for larger screens */
+@media (min-width: 992px) {
+  .book-preview {
+      position: relative;
+      text-align: center;
+  }
+
+  .book-preview img.background-device {
+      max-width: 80%; /* Prevent from taking too much space */
+      margin: 0 auto; /* Center the image */
+  }
+
+  .section-heading {
+      padding-left: 2rem;
+  }
+}
+
+/* Ensure proper stacking on mobile */
+@media (max-width: 768px) {
+  .book-preview {
+      text-align: center;
+      margin-bottom: 1rem;
+  }
+
+  .book-preview img.background-device {
+      max-width: 100%;
+      margin: 0 auto;
+  }
+}
+
 
 /* Owl Slider */
 .owl-book {
