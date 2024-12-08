@@ -128,6 +128,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Use file-based or database session backends for better scalability
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 1209600  # 2 weeks
+SESSION_SAVE_EVERY_REQUEST = True
+
+
 import environ
 import os
 
@@ -151,3 +157,4 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')  # No fallback for sensitive 
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')  # No fallback for sensitive data
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'feed.teach.love@gmail.com')  # Provide a fallback
 
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')

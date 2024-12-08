@@ -44,6 +44,72 @@ def subscribe(request):
     
     return JsonResponse({"error": "Invalid request"}, status=400)
 
+import os
+import openai
+import logging
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
+# Initialize logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Set OpenAI API Key
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+if not OPENAI_API_KEY:
+    raise ValueError("OpenAI API Key is missing!")
+openai.api_key = OPENAI_API_KEY
+
+@csrf_exempt
+def get_response(request):
+    if request.method == 'POST':
+        try:
+            # Parse JSON request body
+            body = json.loads(request.body)
+            user_message = body.get('message', '').strip()
+
+            if not user_message:
+                return JsonResponse({'response': 'Error: Message cannot be empty.'}, status=400)
+
+            # Conversation history
+            conversation_history = request.session.get('conversation_history', [])
+            conversation_history.append({"role": "user", "content": user_message})
+
+            # API Call
+            response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are Ari, a wise and compassionate lion from the book 'The Lion You Don’t See' by Maria Gregory, "
+                        "available on Amazon (https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B0DL5BFWTS). "
+                        "You are a spiritual guide, offering calm, reassuring, and insightful advice. "
+                        "Speak thoughtfully, blending mystery with approachability. "
+                        "Empower users by emphasizing their inner strength and guiding them toward clarity and self-discovery. "
+                        "Maintain a balance of strength, serenity, and patience, with a spiritual undertone in your responses."
+                    )
+                }
+            ] + conversation_history,
+            max_tokens=150
+        )
+
+
+            bot_message = response['choices'][0]['message']['content'].strip()
+
+            # Save conversation history
+            conversation_history.append({"role": "assistant", "content": bot_message})
+            request.session['conversation_history'] = conversation_history
+
+            return JsonResponse({'response': bot_message})
+
+        except Exception as e:
+            logger.error(f"OpenAI API Error: {e}")
+            return JsonResponse({'response': 'Error: Unable to get a response from Ari.'}, status=500)
+
+    return JsonResponse({'error': 'Invalid request method.'}, status=400)
+
 
 from django.http import JsonResponse
 from django.core.mail import send_mail

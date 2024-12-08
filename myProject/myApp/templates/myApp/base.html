@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="{% static 'assets/plugins/owl-carousel/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style-2.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 </head>
 
@@ -34,10 +36,14 @@
 
   <!-- Include Header -->
   {% include 'myApp/header.html' %}
-
+  {% include 'myApp/ari.html' %}
   <!-- Main Content Block -->
   {% block content %}
+
   <!-- Content will be injected here by child templates -->
+   <!-- Floating Chatbot -->
+
+
   {% endblock content %}
 
   <!-- Include Footer -->
@@ -54,6 +60,6 @@
   <script src="{% static 'assets/plugins/slick-carousel/slick/slick.min.js' %}"></script>
   <script src="{% static 'assets/js/contact.js' %}"></script>
   <script src="{% static 'assets/js/theme.js' %}"></script>
-
+  
 </body>
 </html>
