@@ -6,16 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Meta Description -->
-<meta name="description" content="Discover 'The Lion You Don’t See,' the perfect holiday gift for book lovers. A heartfelt story of courage, faith, and self-discovery that inspires readers to embrace their inner strength. Available now!">
+<!-- Meta Description -->
+<meta name="description" content="Looking for a heartfelt and inspiring holiday gift? 'The Lion You Don’t See' by Maria Gregory is a beautiful story of courage, faith, and self-discovery. The perfect Christmas gift for book lovers! Available now for $21.95.">
 
 <!-- Meta Keywords -->
-<meta name="keywords" content="The Lion You Don't See, book gift, holiday gifts, courage, faith, self-discovery, inspirational book, Maria Gregory, motivational story, perfect Christmas gift, lion symbolism, finding strength">
+<meta name="keywords" content="The Lion You Don't See, Maria Gregory, book gifts, holiday presents, courage, faith, self-discovery, inspirational book, Christmas gift ideas, motivational story, lion symbolism, Amazon book">
 
-<!-- Meta Author -->
-<meta name="author" content="Maria Gregory">
-
-<!-- Page Title -->
-<title>{% block title %}The Lion You Don't See - A Perfect Gift for the Holidays{% endblock %}</title>
+<!-- Meta Title -->
+<title>{% block title %}The Lion You Don’t See - Inspiring Holiday Gift for Book Lovers{% endblock %}</title>
 
   {% load static %}
 
@@ -54,7 +52,29 @@
 
   <!-- Include Footer -->
   {% include 'myApp/footer.html' %}
-
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Lion You Don't See",
+      "author": {
+        "@type": "Person",
+        "name": "Maria Gregory"
+      },
+      "description": "A heartfelt story of courage, faith, and self-discovery. Perfect as a holiday gift, this book inspires readers to find their inner strength.",
+      "image": "https://www.thelionyoudontsee.com/static/assets/images/about/book1.png",
+      "url": "https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B0DL5BFWTS",
+      "publisher": "Maria Gregory",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "21.95",
+        "availability": "https://schema.org/InStock",
+        "url": "https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B0DL5BFWTS"
+      }
+    }
+  </script>
+    
   <!-- Essential Scripts -->
   <script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
