@@ -181,3 +181,47 @@ def support(request):
     # If GET request, render the support page
     return render(request, 'myApp/support.html')
 
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
+
+def christmaslion_index(request):
+    # Render the christmaslion landing page
+    context = {}
+    return render(request, 'christmaslion/christmaslionindex.html', context)
+
+def christmaslion_support(request):
+    if request.method == "POST":
+        # Capture form data
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Construct the email message for support
+        subject = f"Book Support Inquiry from {name}"
+        full_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+
+        try:
+            # Send email to support
+            send_mail(
+                subject,
+                full_message,
+                settings.DEFAULT_FROM_EMAIL,
+                ['feed.teach.love@gmail.com'],  # Replace with your support email
+                fail_silently=False,
+            )
+            return JsonResponse({"message": "Thank you for your concern! We'll get back to you soon."})
+
+        except Exception as e:
+            # Handle email sending error
+            return JsonResponse({"error": "Failed to send your message. Please try again later."}, status=500)
+
+    return render(request, 'christmaslion/christmaslionsupport.html')
+
+
+def thank_you(request):
+    return render(request, 'christmaslion/thank_you.html')
+
+def thankyou(request):
+    return render(request, 'myApp/thankyou.html')

@@ -3,7 +3,7 @@
 
 {% block title %}The Lion You Don't See - A Perfect Gift for the Holidays{% endblock %}
 {% block content %}
-
+{% include 'myApp/header.html' %}
 <section class="section contact" id="support">
     <div class="container">
         <div class="row justify-content-center">
@@ -14,6 +14,9 @@
                     <p>If you have any concerns or need assistance with the book, feel free to reach out. We're here to help and ensure you have a seamless experience.</p>
                 </div>
             </div>
+        </div>
+        <div class="alert alert-success support__msg" id="supportMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
+            Thank you for reaching out to us!
         </div>
 
         <div class="row">
@@ -40,15 +43,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-success support__msg" id="supportMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
-                        Thank you for reaching out to us!
-                    </div>
+                    
                 </form> 
             </div>         
         </div>
     </div>
 </section>
-
+{% include 'myApp/footer.html' %}
 <script>
     document.querySelector('#supportForm').addEventListener('submit', function(e) {
     e.preventDefault();

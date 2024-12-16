@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - The Christmas Lion Who Shows The Way</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f9f9f9, #e6f3ff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .thank-you-page {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .thank-you-page .icon {
+            font-size: 80px;
+            color: #28a745;
+        }
+        .thank-you-page h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin: 20px 0;
+        }
+        .thank-you-page p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .thank-you-page .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .thank-you-page .btn:hover {
+            background: #0056b3;
+        }
+        .thank-you-page .footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-page">
+        <div class="icon">
+            &#10003;
+        </div>
+        <h1>Thank You for Your Purchase!</h1>
+        <p>We’re thrilled that you’ve chosen to experience the magic of <em>The   Christmas Lion Who Shows The Way</em>. 
+           We hope this heartwarming story becomes a cherished part of your holiday traditions.</p>
+
+        <a href="{% url 'christmaslion_index' %}" class="btn">Back to Home</a>
+        <div class="footer">
+            <p>&copy; {{ current_year }} iRiseUp Foundation. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

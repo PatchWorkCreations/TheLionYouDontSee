@@ -1,0 +1,79 @@
+{% extends "myApp/base.html" %}
+{% load static %}
+
+{% block title %}The Lion You Don't See - A Perfect Gift for the Holidays{% endblock %}
+{% block content %}
+
+{% include 'christmaslion/christmaslionheader.html' %}
+
+<section class="section">
+    <div class="container">
+        <h1>The Christmas Lion Who Shows The Way - Support</h1>
+        <p class="mb-4">
+            We’re here to help! Whether you have questions about the story, want to share your experience, or need assistance, we’d love to hear from you. 
+            Let us make your journey with The Christmas Lion Who Shows The Way even more magical.
+        </p>
+        <div class="alert alert-success support__msg" id="supportMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert"></div>
+        <div class="alert alert-danger support__msg-error" id="supportErrorMessage" style="display: none; color: red; text-align: center; font-weight: bold;" role="alert"></div>
+        <form method="post" action="{% url 'christmaslion_support' %}" id="supportForm">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-main">Submit</button>
+        </form>
+    </div>
+</section>
+
+{% include 'christmaslion/christmaslionfooter.html' %}
+
+<script>
+    // Attach a submit handler to the form
+    document.querySelector('#supportForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        const formData = new FormData(this);
+
+        // Clear previous messages
+        const successMessage = document.querySelector('#supportMessage');
+        const errorMessage = document.querySelector('#supportErrorMessage');
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+
+        // Send the form data via AJAX
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                // Show success message
+                successMessage.style.display = 'block';
+                successMessage.textContent = data.message;
+
+                // Clear the form fields
+                document.querySelector('#supportForm').reset();
+            } else if (data.error) {
+                // Show error message
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = data.error;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'An unexpected error occurred. Please try again later.';
+        });
+    });
+</script>
+
+{% endblock %}
