@@ -313,7 +313,9 @@
                 </div>
             </div>
         </div>
-
+        <div class="alert alert-success contact__msg" id="contactMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
+            Thank you for getting in touch!
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <form class="contact__form form-row contact-form w-100" method="post" action="{% url 'contact' %}" id="contactForm">
@@ -337,9 +339,6 @@
                                 <button type="submit" class="btn btn-main btn-rounded">Send Message</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="alert alert-success contact__msg" id="contactMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
-                        Thank you for getting in touch!
                     </div>
                 </form> 
             </div>         
