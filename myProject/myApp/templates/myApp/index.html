@@ -4,6 +4,50 @@
 {% block title %}The Lion You Don't See - A Perfect Gift for the Holidays{% endblock %}
 {% block content %}
 <style>
+
+#more-books .heading h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+#more-books .text-color {
+  color: #FF7A61;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+
+.aligned-list {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
+.new-book-highlight {
+  background-color: #f8f9fa;
+}
+
+.highlight-wrapper {
+  background: #ffffff;
+  border-left: 6px solid #FF7A61;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight-wrapper:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.badge-warning {
+  background-color: #FF7A61;
+  color: white;
+}
+
+
     .cta-wrapper {
   position: relative;
   background: #111111;
@@ -79,8 +123,12 @@
                     </p>
 
                     <div class="btn-container">
-                        <a href="#buy" target="_blank" class="btn btn-main">I Want It NOW!</a>
-                    </div>
+                        <a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" class="btn btn-main d-flex align-items-center justify-content-center">
+                          <i class="fab fa-amazon" style="font-size: 1.2rem; color: white; margin-right: 8px;"></i>
+                          I Want It NOW!
+                        </a>
+                      </div>
+                      
                 </div>
             </div>
         </div>
@@ -186,8 +234,67 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>      
 </section>
+
+<!-- Section Header -->
+<section id="more-books-header" class="new-book-highlight pt-5 pb-2">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 text-center">
+        <div class="heading">
+            <span class="badge badge-pill mb-2 px-3 pt-2" 
+            style="font-size: 0.85rem; background-color: #FF7A61; color: white;">
+        Expand Your Shelf
+      </span>
+      
+          <h2 class="mb-3">More Books from the Author</h2>
+          <p class="text-muted">
+            Discover Maria Gregory’s growing collection of soul-stirring books—crafted to uplift, heal, and guide you through every season of life.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Book Section -->
+<section id="book2" class="new-book-highlight pt-2 pb-5">
+  <div class="container">
+    <div class="highlight-wrapper p-5">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          <div class="book-preview">
+            <img src="{% static 'assets/images/about/book2_cover.png' %}" class="img-fluid rounded shadow" alt="Conversations Through Psalms Cover">
+          </div>
+        </div>
+
+        <div class="col-lg-7 col-md-6">
+          <div class="section-heading book-info">
+            <span class="badge badge-pill badge-warning mb-2 px-3 pt-2" style="font-size: 0.85rem;">🌟 New Release</span>
+            <h2 class="mb-3">Conversations Through Psalms</h2>
+            <p class="lead mb-4">
+              This stunning new devotional by Maria Gregory invites you into sacred conversations that stir the heart and still the noise. A companion to *The Lion You Don’t See*, this book guides you through the Psalms with reflection, artistry, and purpose.
+            </p>
+
+            <ul class="mb-4 aligned-list">
+              <li><strong>✨ Devotional Meets Dialogue:</strong> Real talk with God, inspired by the Psalms.</li>
+              <li><strong>🎨 Illustrated Beauty:</strong> Designed to calm and uplift your soul visually and spiritually.</li>
+              <li><strong>🎁 Ideal Gift:</strong> For seekers, givers, and soul-searchers of all ages.</li>
+            </ul>
+
+            <a href="https://www.amazon.com/dp/B0DR33Y28M" target="_blank" class="btn btn-main-2">
+                <i class="fab fa-amazon" style="font-size: 1.2rem; color: white; margin-right: 8px;"></i>
+                Pre-Order on Amazon
+              </a>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
 
 
 <section id="buy" class="cta-3">
