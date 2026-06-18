@@ -1,15 +1,16 @@
-# The Django app lives in the myProject/ subdirectory.
-# This explicit config overrides Nixpacks' auto "subdirectory" detection,
-# which otherwise runs install/start from the repo root and fails to find
-# myProject/requirements.txt. All commands here are relative to the repo root.
+# The Django project now lives at the repo root (manage.py, requirements.txt,
+# myApp/, myProject/ settings package). Build context must be the repo root —
+# make sure the Railway service "Root Directory" setting is EMPTY (not "myProject").
 
 [phases.setup]
 nixPkgs = ["python3", "gcc"]
 
 [phases.install]
 cmds = [
-  "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r myProject/requirements.txt",
+  "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt",
 ]
 
+# Use the venv's gunicorn by absolute path so it works even when /opt/venv/bin
+# is not on PATH at runtime, and bind to Railway's $PORT.
 [start]
-cmd = "cd myProject && /opt/venv/bin/gunicorn myProject.wsgi:application --bind 0.0.0.0:$PORT --log-file -"
+cmd = "/opt/venv/bin/gunicorn myProject.wsgi:application --bind 0.0.0.0:$PORT --log-file -"
