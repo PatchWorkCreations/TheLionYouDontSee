@@ -1,80 +1,26 @@
+{% extends "myApp/base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - The Lion You Don't See</title>
-    
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f9f9f9, #e6f3ff);
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .thank-you-page {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .thank-you-page .icon {
-            font-size: 80px;
-            color: #28a745;
-        }
-        .thank-you-page h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin: 20px 0;
-        }
-        .thank-you-page p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        .thank-you-page img {
-            margin: 20px 0;
-            max-width: 50%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .thank-you-page .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 30px;
-            font-size: 1rem;
-            color: #fff;
-            background: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-        .thank-you-page .btn:hover {
-            background: #0056b3;
-        }
-        .thank-you-page .footer {
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-    </style>
-</head>
-<body>
-    <div class="thank-you-page">
-        <div class="icon">
-            &#10003;
-        </div>
-        <h1>Thank You for Your Purchase!</h1>
-        <img src="{% static 'assets/images/about/thelionyoudontsee.png' %}" alt="The Lion You Don't See Book Cover">
-        <p>Thank you for purchasing a copy of <em>The Lion You Don't See</em>. Your book is on its way and will arrive within 3-5 business days. We hope this inspiring story becomes a cherished part of your journey toward personal growth.</p>
-        <p>If you have any questions or need further assistance, feel free to reach out to us at <a href="mailto:hello@iriseupacademy.com">hello@iriseupacademy.com</a>.</p>
 
-        <a href="{% url 'christmaslion_index' %}" class="btn">Back to Home</a>
-        <div class="footer">
-            <p>&copy; {{ current_year }} iRiseUp Foundation. All rights reserved.</p>
-        </div>
+{% block title %}Thank You - The Lion You Don't See{% endblock %}
+{% block body_class %}inner-page{% endblock %}
+{% block nav_extra %}solid{% endblock %}
+
+{% block content %}
+  <section class="section" style="text-align:center">
+    <div class="wrap" style="max-width:720px">
+      <div class="reveal">
+        <span class="eyebrow" style="justify-content:center"><svg class="mark"><use href="#mark"/></svg> Order confirmed</span>
+        <h2>Thank you for your purchase!</h2>
+        <img src="{% static 'assets/images/about/thelionyoudontsee.png' %}" alt="The Lion You Don't See book cover"
+             style="max-width:320px;width:70%;margin:32px auto 28px;border-radius:var(--r);box-shadow:var(--shadow);">
+        <p style="color:var(--body);max-width:52ch;margin:0 auto 18px">
+          Thank you for purchasing a copy of <em>The Lion You Don't See</em>. Your book is on its way and will arrive within 3–5 business days. We hope this inspiring story becomes a cherished part of your journey toward personal growth.
+        </p>
+        <p style="color:var(--muted);max-width:52ch;margin:0 auto 32px">
+          Questions or need a hand? Reach us at <a href="mailto:hello@iriseupacademy.com" style="color:var(--gold-deep);font-weight:700">hello@iriseupacademy.com</a>.
+        </p>
+        <a href="{% url 'index' %}" class="btn btn-gold">Back to home</a>
+      </div>
     </div>
-</body>
-</html>
+  </section>
+{% endblock %}

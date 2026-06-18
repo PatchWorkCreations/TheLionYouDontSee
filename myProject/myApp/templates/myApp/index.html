@@ -2,535 +2,254 @@
 {% load static %}
 
 {% block title %}The Lion You Don't See - A Perfect Gift for the Holidays{% endblock %}
+
 {% block content %}
-<style>
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="book">
+    <svg class="hero-mane" viewBox="-200 -200 400 400" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="70.0" y1="0.0" x2="165.46" y2="0.0"/><line x1="69.66" y1="6.86" x2="149.87" y2="14.76"/><line x1="68.65" y1="13.66" x2="149.77" y2="29.79"/><line x1="66.99" y1="20.32" x2="171.24" y2="51.95"/><line x1="64.67" y1="26.79" x2="158.38" y2="65.6"/><line x1="61.73" y1="33.0" x2="121.21" y2="64.79"/><line x1="58.2" y1="38.89" x2="113.4" y2="75.77"/><line x1="54.11" y1="44.41" x2="117.27" y2="96.24"/><line x1="49.5" y1="49.5" x2="95.39" y2="95.39"/><line x1="44.41" y1="54.11" x2="76.04" y2="92.66"/><line x1="38.89" y1="58.2" x2="82.11" y2="122.89"/><line x1="33.0" y1="61.73" x2="80.91" y2="151.37"/><line x1="26.79" y1="64.67" x2="59.98" y2="144.8"/><line x1="20.32" y1="66.99" x2="44.23" y2="145.82"/><line x1="13.66" y1="68.65" x2="34.15" y2="171.68"/><line x1="6.86" y1="69.66" x2="16.55" y2="168.08"/><line x1="0.0" y1="70.0" x2="0.0" y2="133.45"/><line x1="-6.86" y1="69.66" x2="-12.71" y2="129.09"/><line x1="-13.66" y1="68.65" x2="-29.08" y2="146.2"/><line x1="-20.32" y1="66.99" x2="-40.26" y2="132.73"/><line x1="-26.79" y1="64.67" x2="-47.46" y2="114.58"/><line x1="-33.0" y1="61.73" x2="-70.99" y2="132.81"/><line x1="-38.89" y1="58.2" x2="-98.29" y2="147.1"/><line x1="-44.41" y1="54.11" x2="-102.57" y2="124.98"/><line x1="-49.5" y1="49.5" x2="-106.55" y2="106.55"/><line x1="-54.11" y1="44.41" x2="-131.0" y2="107.51"/><line x1="-58.2" y1="38.89" x2="-137.52" y2="91.89"/><line x1="-61.73" y1="33.0" x2="-114.7" y2="61.31"/><line x1="-64.67" y1="26.79" x2="-114.94" y2="47.61"/><line x1="-66.99" y1="20.32" x2="-141.38" y2="42.89"/><line x1="-68.65" y1="13.66" x2="-141.2" y2="28.09"/><line x1="-69.66" y1="6.86" x2="-128.83" y2="12.69"/><line x1="-70.0" y1="0.0" x2="-153.32" y2="0.0"/><line x1="-69.66" y1="-6.86" x2="-179.96" y2="-17.72"/><line x1="-68.65" y1="-13.66" x2="-161.96" y2="-32.22"/><line x1="-66.99" y1="-20.32" x2="-141.35" y2="-42.88"/><line x1="-64.67" y1="-26.79" x2="-150.22" y2="-62.22"/><line x1="-61.73" y1="-33.0" x2="-142.36" y2="-76.09"/><line x1="-58.2" y1="-38.89" x2="-106.21" y2="-70.96"/><line x1="-54.11" y1="-44.41" x2="-93.42" y2="-76.67"/><line x1="-49.5" y1="-49.5" x2="-104.48" y2="-104.48"/><line x1="-44.41" y1="-54.11" x2="-95.38" y2="-116.22"/><line x1="-38.89" y1="-58.2" x2="-75.38" y2="-112.81"/><line x1="-33.0" y1="-61.73" x2="-73.31" y2="-137.16"/><line x1="-26.79" y1="-64.67" x2="-70.02" y2="-169.05"/><line x1="-20.32" y1="-66.99" x2="-48.46" y2="-159.75"/><line x1="-13.66" y1="-68.65" x2="-28.03" y2="-140.92"/><line x1="-6.86" y1="-69.66" x2="-15.19" y2="-154.2"/><line x1="-0.0" y1="-70.0" x2="-0.0" y2="-157.45"/><line x1="6.86" y1="-69.66" x2="12.43" y2="-126.24"/><line x1="13.66" y1="-68.65" x2="23.26" y2="-116.94"/><line x1="20.32" y1="-66.99" x2="43.26" y2="-142.61"/><line x1="26.79" y1="-64.67" x2="60.23" y2="-145.41"/><line x1="33.0" y1="-61.73" x2="67.0" y2="-125.34"/><line x1="38.89" y1="-58.2" x2="87.11" y2="-130.37"/><line x1="44.41" y1="-54.11" x2="116.18" y2="-141.57"/><line x1="49.5" y1="-49.5" x2="118.16" y2="-118.16"/><line x1="54.11" y1="-44.41" x2="107.43" y2="-88.17"/><line x1="58.2" y1="-38.89" x2="122.3" y2="-81.72"/><line x1="61.73" y1="-33.0" x2="135.8" y2="-72.59"/><line x1="64.67" y1="-26.79" x2="117.95" y2="-48.86"/><line x1="66.99" y1="-20.32" x2="114.45" y2="-34.72"/><line x1="68.65" y1="-13.66" x2="148.36" y2="-29.51"/><line x1="69.66" y1="-6.86" x2="163.76" y2="-16.13"/></g>
+    </svg>
 
-#more-books .heading h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-}
-
-#more-books .text-color {
-  color: #FF7A61;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
-}
-
-
-.aligned-list {
-  list-style-position: inside;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-
-.new-book-highlight {
-  background-color: #f8f9fa;
-}
-
-.highlight-wrapper {
-  background: #ffffff;
-  border-left: 6px solid #FF7A61;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease-in-out;
-}
-
-.highlight-wrapper:hover {
-  transform: scale(1.01);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}
-
-.badge-warning {
-  background-color: #FF7A61;
-  color: white;
-}
-
-
-    .cta-wrapper {
-  position: relative;
-  background: #111111;
-  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
-  background-size: cover;
-  border-radius: 15px;
-  padding: 80px 40px 90px 40px;
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-}
-.cta-wrapper:before {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background: #111111;
-  opacity: 0.95;
-  border-radius: 15px;
-}
-
-.bg-main{
-  position: relative;
-  background: #111111;
-  background: url("/static/assets/images/about/cta-bg1.jpg") fixed 50% 50%;
-  background-size: cover;
-  border-radius: 15px;
-  padding: 80px 40px 90px 40px;
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-}
-
-.bg-main:before {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background: #111111;
-  opacity: 0.95;
-  border-radius: 15px;
-}
-
-#contactMessage {
-    display: none;         /* Initially hidden */
-    text-align: center;     /* Center the text */
-    font-weight: bold;      /* Make the text bold */
-    color: green;           /* Set the color */
-    margin-top: 20px;       /* Add some space above */
-}
-
-</style>
-
-{% include 'myApp/header.html' %}
-<section class="banner-main-3" id="banner-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="banner-img">
-                    <img src="{% static 'assets/images/about/book1.png' %}" alt="The Lion You Don’t See Book Cover" class="img-fluid w-100">
-                </div>
-            </div>
-            <div class="col-lg-8 col-sm-12 col-md-6">
-                <div class="main-banner-content">
-                    
-                    <h1>Discover the Strength Within You</h1>
-                    <p class="mb-3 mt-4">
-                        The roar you’ve been waiting for is almost here! The Lion You Don’t See is more than a book—it’s a journey of self-discovery, resilience, and untapped courage. Each page will take you deeper, inspiring you to recognize the lion within.
-                    </p>
-                    <span class="subtitle">Be the First to Experience It</span>
-                    <p class="mb-3 mt-4">
-                        While the official release is around the corner, you don’t have to wait! Early access is available now at iRiseUpFoundation.org/thelionyoudontsee. Dive in early, and prepare to unleash your hidden strength.
-                    </p>
-
-                    <div class="btn-container">
-                        <a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" class="btn btn-main d-flex align-items-center justify-content-center">
-                          <i class="fab fa-amazon" style="font-size: 1.2rem; color: white; margin-right: 8px;"></i>
-                          I Want It NOW!
-                        </a>
-                      </div>
-                      
-                </div>
-            </div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow on-dark"><svg class="mark"><use href="#mark"/></svg> A Story of Hidden Strength · Maria Gregory</span>
+        <h1>Meet the courage you <em>didn't know</em> you had.</h1>
+        <p class="hero-lead">A journey through resilience, faith, and self-discovery — written to help readers of every age find the lion within.</p>
+        <div class="hero-actions">
+          <a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-amazon"></i> Get it on Amazon</a>
+          <a href="#inside" class="btn btn-ghost-cream">Look inside</a>
         </div>
+        <div class="hero-meta">
+          <span><strong>$21.95</strong> Paperback</span>
+          <span class="dot"></span>
+          <span>Also on <strong>Kindle</strong></span>
+          <span class="dot"></span>
+          <span>For teens &amp; parents</span>
+        </div>
+      </div>
+      <div class="hero-book">
+        <span class="glow"></span>
+        <img src="{% static 'assets/images/about/book1.png' %}" alt="The Lion You Don't See book cover by Maria Gregory">
+      </div>
     </div>
-</section>
+  </header>
 
-<section class="features" id="features">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="heading">
-                    <span>features</span>
-                    <h2>Core Features of the Book</h2>
-                    <p>The Lion You Don’t See is a transformative journey through resilience, personal growth, and the strength that lies within, crafted to empower and inspire readers of all ages.</p>
-                </div>
-            </div>
+  <!-- ===================== PILLARS ===================== -->
+  <section class="section pillars">
+    <div class="wrap">
+      <div class="reveal" style="max-width:640px">
+        <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> Inside the book</span>
+        <h2>Built to be read, felt, and remembered.</h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar reveal">
+          <svg class="mark"><use href="#mark"/></svg>
+          <h3>Real-life lessons</h3>
+          <p>Every chapter carries an insight you can act on — quiet reflections that help readers face their challenges and find the strength already inside them.</p>
         </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="ti-heart"></i></div>
-                    <h5>Inspiring Real-Life Lessons</h5>
-                    <p>Each chapter is packed with actionable insights and reflections, encouraging readers to overcome their challenges and see the strength within.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="ti-mobile"></i></div>
-                    <h5>Accessible Across All Devices</h5>
-                    <p>Whether on Kindle, mobile, or desktop, the book’s layout and design provide an immersive reading experience for everyone.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-item">
-                    <div class="feature-icon"><i class="ti-layers-alt"></i></div>
-                    <h5>High-Quality Visuals and Design</h5>
-                    <p>Includes vivid illustrations and a beautiful layout that make the reading journey engaging and memorable.</p>
-                </div>
-            </div>
+        <div class="pillar reveal">
+          <svg class="mark"><use href="#mark"/></svg>
+          <h3>Reads beautifully anywhere</h3>
+          <p>Kindle, phone, or paperback in hand — the layout was made to feel immersive on whatever you're reading it on.</p>
         </div>
-    </div>
-</section>
-
-<section class="book" id="book">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-md-6">
-                <div class="book-preview">
-                    <img src="{% static 'assets/images/about/book1.png' %}" class="background-device img-fluid" alt="The Lion You Don’t See Book Cover">
-                    <div class="owl-book owl-carousel owl-theme" style="opacity: 1; display: block;">
-                        <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page01.png' %}" alt="The Lion You Don’t See Book Cover" class="img-fluid">
-                            <div class="overlay">
-                                <a href="{% static 'assets/images/about/book_page00.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
-                                    <i class="ti-fullscreen"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page02.png' %}" alt="The Lion You Don’t See Book Cover" class="img-fluid">
-                            <div class="overlay">
-                                <a href="{% static 'assets/images/about/book_page2.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
-                                    <i class="ti-fullscreen"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="book-item">
-                            <img src="{% static 'assets/images/about/book_page03.png' %}" alt="The Lion You Don’t See Book Cover" class="img-fluid">
-                            <div class="overlay">
-                                <a href="{% static 'assets/images/about/book_page.png' %}" class="popup-gallery img-fluid" data-title="Image Caption">
-                                    <i class="ti-fullscreen"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-6">
-                <div class="section-heading book-info mt-lg-0 pl-4">
-                    <h2 class="text-lg mb-4">About The Book</h2>
-                    <p class="lead">
-                        The Lion You Don’t See is a unique exploration of personal power and hidden resilience, designed to resonate with teens and parents alike, inspiring readers to discover the unbreakable spirit within.
-                    </p>
-
-                    <div class="about-features mt-5">
-                        <div class="about-item mb-40">
-                            <h5>Empowering Vision</h5>
-                            <p>This book guides readers on a journey to unlock their inner strength and confront life’s unseen challenges with confidence and courage.</p>
-                        </div>
-                        <div class="about-item mb-40">
-                            <h5>Insightful Wisdom</h5>
-                            <p>With each chapter, readers gain practical tools and spiritual insights to cultivate resilience and find their own path to growth.</p>
-                        </div>
-                        <div class="about-item">
-                            <h5>Timeless Inspiration</h5>
-                            <p>Filled with lessons that remain relevant across generations, The Lion You Don’t See serves as an evergreen source of motivation and guidance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>      
-</section>
-
-<!-- Section Header -->
-<section id="more-books-header" class="new-book-highlight pt-5 pb-2">
-  <div class="container">
-    <div class="row justify-content-center mb-4">
-      <div class="col-lg-8 text-center">
-        <div class="heading">
-            <span class="badge badge-pill mb-2 px-3 pt-2" 
-            style="font-size: 0.85rem; background-color: #FF7A61; color: white;">
-        Expand Your Shelf
-      </span>
-      
-          <h2 class="mb-3">More Books from the Author</h2>
-          <p class="text-muted">
-            Discover Maria Gregory’s growing collection of soul-stirring books—crafted to uplift, heal, and guide you through every season of life.
-          </p>
+        <div class="pillar reveal">
+          <svg class="mark"><use href="#mark"/></svg>
+          <h3>Vivid illustration &amp; design</h3>
+          <p>Warm, hand-crafted artwork and an unhurried page design turn each sitting into something worth returning to.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- New Book Section -->
-<section id="book2" class="new-book-highlight pt-2 pb-5">
-  <div class="container">
-    <div class="highlight-wrapper p-5">
-      <div class="row align-items-center">
-        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
-          <div class="book-preview">
-            <img src="{% static 'assets/images/about/book2_cover.png' %}" class="img-fluid rounded shadow" alt="Conversations Through Psalms Cover">
+  <!-- ===================== ABOUT THE BOOK ===================== -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-cover reveal">
+        <span class="frame"></span>
+        <img src="{% static 'assets/images/about/book1.png' %}" alt="The Lion You Don't See book cover">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> About the book</span>
+        <p class="about-lead">An exploration of personal power and hidden resilience — written to remind teens and parents alike that the unbreakable spirit they're looking for has been theirs all along.</p>
+        <div class="about-items">
+          <div class="about-item">
+            <h3>Empowering vision</h3>
+            <p>A guide to unlocking your inner strength and meeting life's unseen challenges with confidence and courage.</p>
           </div>
-        </div>
-
-        <div class="col-lg-7 col-md-6">
-          <div class="section-heading book-info">
-            <span class="badge badge-pill badge-warning mb-2 px-3 pt-2" style="font-size: 0.85rem;">🌟 New Release</span>
-            <h2 class="mb-3">Conversations Through Psalms</h2>
-            <p class="lead mb-4">
-              This stunning new devotional by Maria Gregory invites you into sacred conversations that stir the heart and still the noise. A companion to *The Lion You Don’t See*, this book guides you through the Psalms with reflection, artistry, and purpose.
-            </p>
-
-            <ul class="mb-4 aligned-list">
-              <li><strong>✨ Devotional Meets Dialogue:</strong> Real talk with God, inspired by the Psalms.</li>
-              <li><strong>🎨 Illustrated Beauty:</strong> Designed to calm and uplift your soul visually and spiritually.</li>
-              <li><strong>🎁 Ideal Gift:</strong> For seekers, givers, and soul-searchers of all ages.</li>
-            </ul>
-
-            <a href="https://www.amazon.com/dp/B0DR33Y28M" target="_blank" class="btn btn-main-2">
-                <i class="fab fa-amazon" style="font-size: 1.2rem; color: white; margin-right: 8px;"></i>
-                Pre-Order on Amazon
-              </a>              
+          <div class="about-item">
+            <h3>Insightful wisdom</h3>
+            <p>Practical tools and spiritual insight in every chapter, so growth feels less like a leap and more like a next step.</p>
+          </div>
+          <div class="about-item">
+            <h3>Timeless inspiration</h3>
+            <p>Lessons that hold across generations — an evergreen source of motivation to come back to whenever the road gets steep.</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-
-
-<section id="buy" class="cta-3">
-    <div class="container">
-        <div class="row justify-content-center cta-wrapper">
-            <div class="col-lg-10">
-                <div class="cta-content text-center">
-                    <span>Sign up now for updates, special insights, and exclusive pre-release offers.</span>
-                    <h2>Uncover the strength within—get The Lion You Don’t See today.</h2>
-                    <div class="btn-container">
-                        <a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" class="btn btn-main-2">
-                            <i class="fab fa-amazon" style="font-size: 1.2rem; color: white; margin-right: 8px;"></i>
-                            Pre-Order on Amazon
-                          </a>    
-                      </div>
-                      
-                    <!--                               
-                    <a href="https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B0DL5BFWTS" target="_blank" class="btn btn-white mt-2">
-                        <i class="fab fa-amazon mr-2"></i> Available on Amazon
-                    </a>
-                    <a href="https://www.iriseupfoundation.org/product-page/the-lion-you-don-t-see" target="_blank" class="btn btn-main-2 mt-2 ml-lg-2">
-                        <i class="fab fa-apple mr-2"></i> Available on iriseupfoundation.org
-                    </a>
-                    -->
-                </div>
-            </div>
+  <!-- ===================== LOOK INSIDE ===================== -->
+  <section class="section inside" id="inside">
+    <div class="wrap">
+      <div class="inside-head reveal">
+        <div>
+          <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> A first glance</span>
+          <h2>Look inside</h2>
+          <p>A few pages from the book. Tap any spread to open it full size.</p>
         </div>
+      </div>
+      <div class="gallery reveal">
+        <a href="{% static 'assets/images/about/book_page00.png' %}" target="_blank" rel="noopener">
+          <img src="{% static 'assets/images/about/book_page01.png' %}" alt="Sample page from The Lion You Don't See">
+        </a>
+        <a href="{% static 'assets/images/about/book_page2.png' %}" target="_blank" rel="noopener">
+          <img src="{% static 'assets/images/about/book_page02.png' %}" alt="Sample page from The Lion You Don't See">
+        </a>
+        <a href="{% static 'assets/images/about/book_page.png' %}" target="_blank" rel="noopener">
+          <img src="{% static 'assets/images/about/book_page03.png' %}" alt="Sample page from The Lion You Don't See">
+        </a>
+      </div>
     </div>
-</section>
+  </section>
 
-
-
-<section class="author section" id="author">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <div class="about-img">
-                    <img src="{% static 'assets/images/about/authorimg1.jpg' %}" alt="The Lion You Don’t See Author Maria Gregory" class="img-fluid w-100">
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="author-info pl-4 mt-5 mt-lg-0">
-                    <div class="heading">
-                        <span class="text-color">About the Author</span>
-                        <h2>Maria Gregory</h2>
-                        <div class="follow">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <a href="#"><i class="ti-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#"><i class="ti-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#"><i class="ti-linkedin"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#"><i class="ti-pinterest"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#"><i class="ti-github"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <p class="mb-4">
-                        Maria Gregory is a natural storyteller and visionary, whose heart beats at the core of The Lion You Don’t See. As the founder of the I RiseUp Group of Companies—including I Riseup Academy, I Riseup Foundation, and CLICK (Computer Learning for Inner City Kids)—Maria is on a mission to empower people to find their inner strength and realize the incredible possibilities that life has to offer.
-                    </p>
-
-                    <p class="mb-4">
-                        Maria’s journey has been one of service and growth. With a background deeply rooted in both counseling and education, she proudly served as a Presidential Member of the American Christian Counselors Association from 2009 to 2020, offering guidance and support to countless individuals as they navigated their own paths of healing and personal growth. She also dedicated over a decade as a volunteer Big Sister with Big Brothers Big Sisters of America from 2004 to 2016, mentoring young people and encouraging them to reach for their full potential.
-                    </p>
-
-                    <p class="mb-4">
-                        From 2012 to 2014, and again in 2018, Maria served as a Judge for the Invention Convention League, inspiring the next generation of inventors and creators. She wears many hats—wife, stepmom, big sister, aunt, godmother, and trusted friend—finding joy in nurturing the people she’s called to serve and support. Her passion for community and personal connection fuels everything she does.
-                    </p>
-
-                    <p class="mb-4">
-                        The Lion You Don’t See is a project that’s especially close to Maria’s heart. Inspired by her desire to help readers of all ages uncover the quiet, often hidden strength inside them, she believes that through storytelling, people can begin to see beyond their struggles and recognize the courage they didn’t even know they had.
-                    </p>
-
-                    <p class="mb-4">
-                        Maria’s ultimate goal? To show you that the lion you don’t see is roaring inside you, just waiting to be discovered.
-                    </p>
-
-                </div>
-            </div>
-        </div>
+  <!-- ===================== COMPANION ===================== -->
+  <section class="section companion" id="companion">
+    <svg class="hero-mane" viewBox="-200 -200 400 400" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="70.0" y1="0.0" x2="165.46" y2="0.0"/><line x1="69.66" y1="6.86" x2="149.87" y2="14.76"/><line x1="68.65" y1="13.66" x2="149.77" y2="29.79"/><line x1="66.99" y1="20.32" x2="171.24" y2="51.95"/><line x1="64.67" y1="26.79" x2="158.38" y2="65.6"/><line x1="61.73" y1="33.0" x2="121.21" y2="64.79"/><line x1="58.2" y1="38.89" x2="113.4" y2="75.77"/><line x1="54.11" y1="44.41" x2="117.27" y2="96.24"/><line x1="49.5" y1="49.5" x2="95.39" y2="95.39"/><line x1="44.41" y1="54.11" x2="76.04" y2="92.66"/><line x1="38.89" y1="58.2" x2="82.11" y2="122.89"/><line x1="33.0" y1="61.73" x2="80.91" y2="151.37"/><line x1="26.79" y1="64.67" x2="59.98" y2="144.8"/><line x1="20.32" y1="66.99" x2="44.23" y2="145.82"/><line x1="13.66" y1="68.65" x2="34.15" y2="171.68"/><line x1="6.86" y1="69.66" x2="16.55" y2="168.08"/><line x1="0.0" y1="70.0" x2="0.0" y2="133.45"/><line x1="-6.86" y1="69.66" x2="-12.71" y2="129.09"/><line x1="-13.66" y1="68.65" x2="-29.08" y2="146.2"/><line x1="-20.32" y1="66.99" x2="-40.26" y2="132.73"/><line x1="-26.79" y1="64.67" x2="-47.46" y2="114.58"/><line x1="-33.0" y1="61.73" x2="-70.99" y2="132.81"/><line x1="-38.89" y1="58.2" x2="-98.29" y2="147.1"/><line x1="-44.41" y1="54.11" x2="-102.57" y2="124.98"/><line x1="-49.5" y1="49.5" x2="-106.55" y2="106.55"/><line x1="-54.11" y1="44.41" x2="-131.0" y2="107.51"/><line x1="-58.2" y1="38.89" x2="-137.52" y2="91.89"/><line x1="-61.73" y1="33.0" x2="-114.7" y2="61.31"/><line x1="-64.67" y1="26.79" x2="-114.94" y2="47.61"/><line x1="-66.99" y1="20.32" x2="-141.38" y2="42.89"/><line x1="-68.65" y1="13.66" x2="-141.2" y2="28.09"/><line x1="-69.66" y1="6.86" x2="-128.83" y2="12.69"/><line x1="-70.0" y1="0.0" x2="-153.32" y2="0.0"/><line x1="-69.66" y1="-6.86" x2="-179.96" y2="-17.72"/><line x1="-68.65" y1="-13.66" x2="-161.96" y2="-32.22"/><line x1="-66.99" y1="-20.32" x2="-141.35" y2="-42.88"/><line x1="-64.67" y1="-26.79" x2="-150.22" y2="-62.22"/><line x1="-61.73" y1="-33.0" x2="-142.36" y2="-76.09"/><line x1="-58.2" y1="-38.89" x2="-106.21" y2="-70.96"/><line x1="-54.11" y1="-44.41" x2="-93.42" y2="-76.67"/><line x1="-49.5" y1="-49.5" x2="-104.48" y2="-104.48"/><line x1="-44.41" y1="-54.11" x2="-95.38" y2="-116.22"/><line x1="-38.89" y1="-58.2" x2="-75.38" y2="-112.81"/><line x1="-33.0" y1="-61.73" x2="-73.31" y2="-137.16"/><line x1="-26.79" y1="-64.67" x2="-70.02" y2="-169.05"/><line x1="-20.32" y1="-66.99" x2="-48.46" y2="-159.75"/><line x1="-13.66" y1="-68.65" x2="-28.03" y2="-140.92"/><line x1="-6.86" y1="-69.66" x2="-15.19" y2="-154.2"/><line x1="-0.0" y1="-70.0" x2="-0.0" y2="-157.45"/><line x1="6.86" y1="-69.66" x2="12.43" y2="-126.24"/><line x1="13.66" y1="-68.65" x2="23.26" y2="-116.94"/><line x1="20.32" y1="-66.99" x2="43.26" y2="-142.61"/><line x1="26.79" y1="-64.67" x2="60.23" y2="-145.41"/><line x1="33.0" y1="-61.73" x2="67.0" y2="-125.34"/><line x1="38.89" y1="-58.2" x2="87.11" y2="-130.37"/><line x1="44.41" y1="-54.11" x2="116.18" y2="-141.57"/><line x1="49.5" y1="-49.5" x2="118.16" y2="-118.16"/><line x1="54.11" y1="-44.41" x2="107.43" y2="-88.17"/><line x1="58.2" y1="-38.89" x2="122.3" y2="-81.72"/><line x1="61.73" y1="-33.0" x2="135.8" y2="-72.59"/><line x1="64.67" y1="-26.79" x2="117.95" y2="-48.86"/><line x1="66.99" y1="-20.32" x2="114.45" y2="-34.72"/><line x1="68.65" y1="-13.66" x2="148.36" y2="-29.51"/><line x1="69.66" y1="-6.86" x2="163.76" y2="-16.13"/></g>
+    </svg>
+    <div class="wrap companion-grid">
+      <div class="companion-cover reveal">
+        <img src="https://m.media-amazon.com/images/I/71X6zMvCT1L._SY425_.jpg" alt="Conversations Through Psalms book cover by Maria Gregory">
+      </div>
+      <div class="reveal">
+        <span class="tag"><svg class="mark" style="width:14px;height:14px"><use href="#mark"/></svg> New release</span>
+        <h2>Conversations Through Psalms</h2>
+        <p class="companion-lead">A devotional companion to <em>The Lion You Don't See</em> — sacred conversations that stir the heart and still the noise, walking you through the Psalms with reflection and artistry.</p>
+        <ul class="companion-list">
+          <li><svg class="mark"><use href="#mark"/></svg><span><b>Devotional meets dialogue.</b> Honest conversations with God, drawn from the Psalms.</span></li>
+          <li><svg class="mark"><use href="#mark"/></svg><span><b>Illustrated to calm.</b> Pages designed to settle the mind and lift the spirit.</span></li>
+          <li><svg class="mark"><use href="#mark"/></svg><span><b>Made to be given.</b> A gift for seekers and soul-searchers of every age.</span></li>
+        </ul>
+        <a href="https://www.amazon.com/dp/B0DR33Y28M" target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-amazon"></i> Pre-order on Amazon</a>
+      </div>
     </div>
-</section>
+  </section>
 
-
-<section class="cta-home">
-    <div class="container">
-        <div class="row justify-content-center bg-main">
-            <div class="col-lg-6">
-                 <h2 class="text-lg">Uncover Your Inner Strength with The Lion You Don’t See.</h2>
-                 <p class="mt-3 mb-0">Sign up for updates, exclusive content, and insights that will keep you inspired as we prepare to roar together.</p>
-            </div>
-
-            <div class="col-lg-6">
-                <div id="subscribe-message" style="display: none; color: rgb(255, 255, 255); margin-top: 10px;"></div>
-                <form action="{% url 'subscribe' %}" method="post" class="subscribe-form">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="full_name" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Enter Your email" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-main-2">Sign Up Now</button>
-                </form>
-            </div>
+  <!-- ===================== AUTHOR ===================== -->
+  <section class="section author" id="author">
+    <div class="wrap author-grid">
+      <div class="author-portrait reveal">
+        <span class="frame"></span>
+        <img src="{% static 'assets/images/about/authorimg1.jpg' %}" alt="Author Maria Gregory">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> About the author</span>
+        <h2>Maria Gregory</h2>
+        <p>Maria Gregory is a natural storyteller and the heart behind <em>The Lion You Don't See</em>. As founder of the I RiseUp Group of Companies — including I Riseup Academy, I Riseup Foundation, and CLICK (Computer Learning for Inner City Kids) — she's on a mission to help people find their inner strength and the possibilities life holds.</p>
+        <p>Her path has been one of service. With a background in counseling and education, she served as a Presidential Member of the American Christian Counselors Association from 2009 to 2020, and spent over a decade as a volunteer Big Sister with Big Brothers Big Sisters of America from 2004 to 2016, mentoring young people toward their full potential.</p>
+        <p>From 2012 to 2014, and again in 2018, she served as a judge for the Invention Convention League, championing the next generation of inventors. Wife, stepmom, big sister, aunt, godmother, friend — she finds her joy in nurturing the people she's called to serve.</p>
+        <p>This book is especially close to her heart. Inspired by a wish to help readers uncover the quiet strength inside them, she believes that through story, people can see past their struggles to the courage they didn't know they had. Her goal is simple: to show you that the lion you don't see is roaring inside you, waiting to be discovered.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/iriseupfoundation" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="section contact" id="contact">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-6">
-                <div class="heading text-center">
-                    <span class="text-color">Get in Touch</span>
-                    <h2>Contact Maria Gregory</h2>
-                    <p>Have a question, need inspiration, or simply want to connect? Reach out to us—we'd love to hear from you and be part of your journey toward inner strength and resilience.</p>
-                </div>
-            </div>
-        </div>
-        <div class="alert alert-success contact__msg" id="contactMessage" style="display: none; color: green; text-align: center; font-weight: bold;" role="alert">
-            Thank you for getting in touch!
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <form class="contact__form form-row contact-form w-100" method="post" action="{% url 'contact' %}" id="contactForm">
-                    {% csrf_token %}
-
-                    <div class="row justify-content-center w-100">
-                        <div class="col-lg-10">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter Your Name" required>
-                            </div>
-                       
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email Address" required>
-                            </div>
-                      
-                            <div class="form-group">
-                                <textarea id="message" name="message" cols="30" rows="8" class="form-control" placeholder="Your Message" required></textarea>    
-                            </div>
-                        
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-main btn-rounded">Send Message</button>
-                            </div>
-                        </div>
-                    </div>
-                </form> 
-            </div>         
-        </div>
+  <!-- ===================== BIG CTA ===================== -->
+  <section class="section cta" id="buy">
+    <svg class="hero-mane" viewBox="-200 -200 400 400" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="70.0" y1="0.0" x2="165.46" y2="0.0"/><line x1="69.66" y1="6.86" x2="149.87" y2="14.76"/><line x1="68.65" y1="13.66" x2="149.77" y2="29.79"/><line x1="66.99" y1="20.32" x2="171.24" y2="51.95"/><line x1="64.67" y1="26.79" x2="158.38" y2="65.6"/><line x1="61.73" y1="33.0" x2="121.21" y2="64.79"/><line x1="58.2" y1="38.89" x2="113.4" y2="75.77"/><line x1="54.11" y1="44.41" x2="117.27" y2="96.24"/><line x1="49.5" y1="49.5" x2="95.39" y2="95.39"/><line x1="44.41" y1="54.11" x2="76.04" y2="92.66"/><line x1="38.89" y1="58.2" x2="82.11" y2="122.89"/><line x1="33.0" y1="61.73" x2="80.91" y2="151.37"/><line x1="26.79" y1="64.67" x2="59.98" y2="144.8"/><line x1="20.32" y1="66.99" x2="44.23" y2="145.82"/><line x1="13.66" y1="68.65" x2="34.15" y2="171.68"/><line x1="6.86" y1="69.66" x2="16.55" y2="168.08"/><line x1="0.0" y1="70.0" x2="0.0" y2="133.45"/><line x1="-6.86" y1="69.66" x2="-12.71" y2="129.09"/><line x1="-13.66" y1="68.65" x2="-29.08" y2="146.2"/><line x1="-20.32" y1="66.99" x2="-40.26" y2="132.73"/><line x1="-26.79" y1="64.67" x2="-47.46" y2="114.58"/><line x1="-33.0" y1="61.73" x2="-70.99" y2="132.81"/><line x1="-38.89" y1="58.2" x2="-98.29" y2="147.1"/><line x1="-44.41" y1="54.11" x2="-102.57" y2="124.98"/><line x1="-49.5" y1="49.5" x2="-106.55" y2="106.55"/><line x1="-54.11" y1="44.41" x2="-131.0" y2="107.51"/><line x1="-58.2" y1="38.89" x2="-137.52" y2="91.89"/><line x1="-61.73" y1="33.0" x2="-114.7" y2="61.31"/><line x1="-64.67" y1="26.79" x2="-114.94" y2="47.61"/><line x1="-66.99" y1="20.32" x2="-141.38" y2="42.89"/><line x1="-68.65" y1="13.66" x2="-141.2" y2="28.09"/><line x1="-69.66" y1="6.86" x2="-128.83" y2="12.69"/><line x1="-70.0" y1="0.0" x2="-153.32" y2="0.0"/><line x1="-69.66" y1="-6.86" x2="-179.96" y2="-17.72"/><line x1="-68.65" y1="-13.66" x2="-161.96" y2="-32.22"/><line x1="-66.99" y1="-20.32" x2="-141.35" y2="-42.88"/><line x1="-64.67" y1="-26.79" x2="-150.22" y2="-62.22"/><line x1="-61.73" y1="-33.0" x2="-142.36" y2="-76.09"/><line x1="-58.2" y1="-38.89" x2="-106.21" y2="-70.96"/><line x1="-54.11" y1="-44.41" x2="-93.42" y2="-76.67"/><line x1="-49.5" y1="-49.5" x2="-104.48" y2="-104.48"/><line x1="-44.41" y1="-54.11" x2="-95.38" y2="-116.22"/><line x1="-38.89" y1="-58.2" x2="-75.38" y2="-112.81"/><line x1="-33.0" y1="-61.73" x2="-73.31" y2="-137.16"/><line x1="-26.79" y1="-64.67" x2="-70.02" y2="-169.05"/><line x1="-20.32" y1="-66.99" x2="-48.46" y2="-159.75"/><line x1="-13.66" y1="-68.65" x2="-28.03" y2="-140.92"/><line x1="-6.86" y1="-69.66" x2="-15.19" y2="-154.2"/><line x1="-0.0" y1="-70.0" x2="-0.0" y2="-157.45"/><line x1="6.86" y1="-69.66" x2="12.43" y2="-126.24"/><line x1="13.66" y1="-68.65" x2="23.26" y2="-116.94"/><line x1="20.32" y1="-66.99" x2="43.26" y2="-142.61"/><line x1="26.79" y1="-64.67" x2="60.23" y2="-145.41"/><line x1="33.0" y1="-61.73" x2="67.0" y2="-125.34"/><line x1="38.89" y1="-58.2" x2="87.11" y2="-130.37"/><line x1="44.41" y1="-54.11" x2="116.18" y2="-141.57"/><line x1="49.5" y1="-49.5" x2="118.16" y2="-118.16"/><line x1="54.11" y1="-44.41" x2="107.43" y2="-88.17"/><line x1="58.2" y1="-38.89" x2="122.3" y2="-81.72"/><line x1="61.73" y1="-33.0" x2="135.8" y2="-72.59"/><line x1="64.67" y1="-26.79" x2="117.95" y2="-48.86"/><line x1="68.65" y1="-13.66" x2="148.36" y2="-29.51"/><line x1="69.66" y1="-6.86" x2="163.76" y2="-16.13"/></g>
+    </svg>
+    <div class="wrap cta-inner reveal">
+      <span class="eyebrow on-dark" style="justify-content:center"><svg class="mark"><use href="#mark"/></svg> The roar is yours</span>
+      <h2>Uncover the strength <em>within</em>.</h2>
+      <p>Get <em>The Lion You Don't See</em> today — and start seeing the courage that's been there all along.</p>
+      <a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-amazon"></i> Get it on Amazon</a>
     </div>
-</section>
-{% include 'myApp/footer.html' %}
+  </section>
+
+  <!-- ===================== SUBSCRIBE + CONTACT ===================== -->
+  <section class="section engage" id="contact">
+    <div class="wrap engage-grid">
+      <!-- subscribe -->
+      <div class="card reveal">
+        <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> Stay inspired</span>
+        <h3>Join the journey</h3>
+        <p>Updates, exclusive content, and insights to keep you inspired as we prepare to roar together.</p>
+        <form action="{% url 'subscribe' %}" method="post" class="subscribe-form">
+          {% csrf_token %}
+          <div class="field"><input type="text" name="full_name" placeholder="Full name" required></div>
+          <div class="field"><input type="email" name="email" placeholder="Your email address" required></div>
+          <button type="submit" class="btn btn-gold">Sign me up</button>
+          <div id="subscribe-message" class="form-msg"></div>
+        </form>
+      </div>
+      <!-- contact -->
+      <div class="card reveal">
+        <span class="eyebrow"><svg class="mark"><use href="#mark"/></svg> Get in touch</span>
+        <h3>Contact Maria</h3>
+        <p>A question, a word of encouragement, or just want to connect? We'd love to hear from you.</p>
+        <form class="contact-form" method="post" action="{% url 'contact' %}" id="contactForm">
+          {% csrf_token %}
+          <div class="field"><input type="text" id="name" name="name" placeholder="Your name" required></div>
+          <div class="field"><input type="email" name="email" id="email" placeholder="Your email address" required></div>
+          <div class="field"><textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea></div>
+          <button type="submit" class="btn btn-ink">Send message</button>
+          <div id="contactMessage" class="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extra_js %}
 <script>
-    document.querySelector(".subscribe-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
-
-        // Gather form data
-        const formData = new FormData(this);
-
-        // Send AJAX request
-        fetch("{% url 'subscribe' %}", {
-            method: "POST",
-            headers: {
-                "X-CSRFToken": formData.get("csrfmiddlewaretoken") // Include CSRF token
-            },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.message) {
-                // Display the success message
-                document.getElementById("subscribe-message").innerText = data.message;
-                document.getElementById("subscribe-message").style.display = "block";
-
-                // Clear the form
-                document.querySelector(".subscribe-form").reset();
-            }
-        })
-        .catch(error => console.error("Error:", error));
-    });
-
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevent normal form submission
-
+  // subscribe form
+  document.querySelector(".subscribe-form").addEventListener("submit", function (event) {
+    event.preventDefault();
     const formData = new FormData(this);
-
-    // Send AJAX request
-    fetch("{% url 'contact' %}", {
-        method: "POST",
-        headers: {
-            "X-CSRFToken": formData.get("csrfmiddlewaretoken")  // Include CSRF token
-        },
-        body: formData
+    fetch("{% url 'subscribe' %}", {
+      method: "POST",
+      headers: { "X-CSRFToken": formData.get("csrfmiddlewaretoken") },
+      body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Parsed data:", data);  // Log parsed JSON data to inspect structure
-
-        const contactMessage = document.getElementById("contactMessage");
-
-        // Display the success or error message
+      .then(r => r.json())
+      .then(data => {
         if (data.message) {
-            // Display only the 'message' field's value
-            contactMessage.textContent = data.message;
-            contactMessage.style.display = "block";
-            document.getElementById("contactForm").reset();
-        } else if (data.error) {
-            contactMessage.textContent = data.error;
-            contactMessage.style.display = "block";
-        } else {
-            contactMessage.textContent = "Unexpected response structure.";
-            contactMessage.style.display = "block";
-            console.error("Unexpected structure:", data);
+          const m = document.getElementById("subscribe-message");
+          m.innerText = data.message; m.style.display = "block";
+          this.reset();
         }
+      })
+      .catch(err => console.error("Error:", err));
+  });
+
+  // contact form
+  document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch("{% url 'contact' %}", {
+      method: "POST",
+      headers: { "X-CSRFToken": formData.get("csrfmiddlewaretoken") },
+      body: formData
     })
-    .catch(error => {
-        console.error("Fetch error:", error);
-        const contactMessage = document.getElementById("contactMessage");
-        contactMessage.textContent = "An error occurred. Please try again.";
-        contactMessage.style.display = "block";
-    });
-});
-
-
+      .then(r => r.json())
+      .then(data => {
+        const m = document.getElementById("contactMessage");
+        m.textContent = data.message || data.error || "Thanks for getting in touch!";
+        m.style.display = "block";
+        if (data.message) this.reset();
+      })
+      .catch(err => {
+        const m = document.getElementById("contactMessage");
+        m.textContent = "An error occurred. Please try again."; m.style.display = "block";
+        console.error("Fetch error:", err);
+      });
+  });
 </script>
-
 {% endblock %}

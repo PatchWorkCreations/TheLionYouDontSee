@@ -1,66 +1,477 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Meta Description -->
-<!-- Meta Description -->
-<meta name="description" content="Looking for a heartfelt and inspiring holiday gift? 'The Lion You Don’t See' by Maria Gregory is a beautiful story of courage, faith, and self-discovery. The perfect Christmas gift for book lovers! Available now for $21.95.">
 
-<!-- Meta Keywords -->
-<meta name="keywords" content="The Lion You Don't See, Maria Gregory, book gifts, holiday presents, courage, faith, self-discovery, inspirational book, Christmas gift ideas, motivational story, lion symbolism, Amazon book">
+  <meta name="description" content="{% block meta_description %}Looking for a heartfelt and inspiring holiday gift? 'The Lion You Don't See' by Maria Gregory is a beautiful story of courage, faith, and self-discovery. The perfect Christmas gift for book lovers! Available now for $21.95.{% endblock %}">
+  <meta name="keywords" content="The Lion You Don't See, Maria Gregory, book gifts, holiday presents, courage, faith, self-discovery, inspirational book, Christmas gift ideas, motivational story, lion symbolism, Amazon book">
 
-<!-- Meta Title -->
-<title>{% block title %}The Lion You Don’t See - Inspiring Holiday Gift for Book Lovers{% endblock %}</title>
+  <title>{% block title %}The Lion You Don't See - Inspiring Holiday Gift for Book Lovers{% endblock %}</title>
 
-  {% load static %}
-
-  <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico' %}">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/animate-css/animate.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/themify/css/themify-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/magnific-popup/magnific-popup.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/slick-carousel/slick/slick.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/owl-carousel/owl.carousel.min.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/plugins/owl-carousel/owl.theme.default.min.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/style-2.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+  <style>
+    :root{
+      --ink:#1B1410;          /* warm espresso, the "unseen" dark */
+      --ink-2:#241B14;
+      --ink-3:#322619;
+      --paper:#F6EFE1;        /* printed-page parchment */
+      --paper-2:#EFE5D2;      /* deeper band */
+      --paper-3:#E7DAC1;
+      --gold:#C0841D;         /* burnished mane gold */
+      --gold-bright:#E2AC44;  /* lit gold on dark */
+      --gold-deep:#8A5A12;
+      --cream:#F3E9D6;        /* text on dark */
+      --cream-dim:rgba(243,233,214,.72);
+      --body:#3A2E20;         /* body text on paper */
+      --muted:#6E5E47;        /* secondary on paper */
+      --line:rgba(27,20,16,.12);
+      --line-cream:rgba(243,233,214,.16);
+      --r:18px;
+      --r-sm:12px;
+      --shadow:0 30px 60px -28px rgba(27,20,16,.45);
+      --shadow-soft:0 18px 40px -24px rgba(27,20,16,.4);
+      --ease:cubic-bezier(.2,.7,.2,1);
+      --maxw:1200px;
+    }
 
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{
+      margin:0;
+      font-family:'Mulish',system-ui,sans-serif;
+      font-size:17px;
+      line-height:1.7;
+      color:var(--body);
+      background:var(--paper);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;transition:color .25s var(--ease);}
+    ul{margin:0;padding:0;list-style:none;}
+
+    h1,h2,h3,h4{
+      font-family:'Fraunces',Georgia,serif;
+      color:var(--ink);
+      font-weight:500;
+      line-height:1.08;
+      letter-spacing:-.01em;
+      margin:0;
+    }
+    h2{font-size:clamp(2rem,1.2rem + 3vw,3.1rem);}
+    h3{font-size:clamp(1.4rem,1.1rem + 1vw,1.8rem);font-weight:600;}
+
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+    .section{padding:clamp(72px,9vw,128px) 0;position:relative;}
+
+    /* ---- eyebrow with halo mark ---- */
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:11px;
+      font-family:'Mulish',sans-serif;font-weight:700;
+      text-transform:uppercase;letter-spacing:.22em;
+      font-size:12px;color:var(--gold-deep);margin-bottom:22px;
+    }
+    .eyebrow.on-dark{color:var(--gold-bright);}
+    .eyebrow .mark{width:22px;height:22px;color:var(--gold);flex:none;}
+    .eyebrow.on-dark .mark{color:var(--gold-bright);}
+
+    /* ---- buttons ---- */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      font-family:'Mulish',sans-serif;font-weight:800;font-size:14px;
+      letter-spacing:.04em;text-transform:uppercase;
+      padding:17px 30px;border-radius:50px;border:1.5px solid transparent;
+      cursor:pointer;transition:transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+      will-change:transform;
+    }
+    .btn:hover{transform:translateY(-3px);}
+    .btn-gold{background:var(--gold);color:#fff;box-shadow:0 14px 30px -12px rgba(192,132,29,.7);}
+    .btn-gold:hover{background:var(--gold-deep);color:#fff;box-shadow:0 20px 40px -14px rgba(192,132,29,.85);}
+    .btn-ink{background:var(--ink);color:var(--cream);}
+    .btn-ink:hover{background:var(--ink-3);color:#fff;}
+    .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);}
+    .btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--cream);}
+    .btn-ghost-cream{background:transparent;border-color:var(--line-cream);color:var(--cream);}
+    .btn-ghost-cream:hover{background:var(--cream);color:var(--ink);border-color:var(--cream);}
+    .btn .fa-amazon{font-size:1.15em;}
+
+    /* =================== NAV =================== */
+    .nav{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+      padding:18px 0;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+    /* default = over dark hero: cream text */
+    .brand{font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:var(--cream);letter-spacing:-.02em;display:flex;align-items:center;gap:10px;transition:color .35s var(--ease);}
+    .brand .mark{width:24px;height:24px;color:var(--gold-bright);flex:none;transition:color .35s var(--ease);}
+    .nav-links{display:flex;align-items:center;gap:34px;}
+    .nav-links a{font-weight:600;font-size:15px;color:var(--cream-dim);transition:color .25s var(--ease);}
+    .nav-links a:hover{color:var(--gold-bright);}
+    .nav-links .nav-cta{color:#fff;}
+    .nav-cta{padding:12px 24px;font-size:12.5px;}
+    .nav-toggle{display:none;background:none;border:0;color:var(--cream);font-size:22px;cursor:pointer;padding:6px;}
+    /* scrolled / solid = over parchment: ink text */
+    .nav.scrolled,.nav.solid{background:rgba(246,239,225,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line),0 12px 30px -24px rgba(27,20,16,.5);}
+    .nav.scrolled{padding:12px 0;}
+    .nav.scrolled .brand,.nav.solid .brand{color:var(--ink);}
+    .nav.scrolled .brand .mark,.nav.solid .brand .mark{color:var(--gold);}
+    .nav.scrolled .nav-links a,.nav.solid .nav-links a{color:var(--ink-2);}
+    .nav.scrolled .nav-links a:hover,.nav.solid .nav-links a:hover{color:var(--gold-deep);}
+    .nav.scrolled .nav-links .nav-cta,.nav.solid .nav-links .nav-cta{color:#fff;}
+    .nav.scrolled .nav-toggle,.nav.solid .nav-toggle{color:var(--ink);}
+
+    /* inner pages (no dark hero) get top spacing so content clears the fixed nav */
+    body.inner-page{padding-top:84px;}
+
+    /* =================== HERO =================== */
+    .hero{
+      position:relative;background:var(--ink);color:var(--cream);
+      padding:170px 0 110px;overflow:hidden;
+    }
+    .hero::after{ /* warm vignette / savanna light */
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(120% 90% at 78% 28%,rgba(226,172,68,.20),transparent 55%),
+                 radial-gradient(80% 70% at 12% 100%,rgba(138,90,18,.22),transparent 60%);
+      pointer-events:none;
+    }
+    .hero-mane{
+      position:absolute;top:34%;right:-4%;width:min(820px,82vw);
+      transform:translateY(-50%);color:var(--gold);opacity:.18;
+      pointer-events:none;z-index:0;
+      animation:spin 180s linear infinite;
+    }
+    @keyframes spin{to{transform:translateY(-50%) rotate(360deg);}}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;}
+    .hero-copy h1{
+      color:var(--cream);font-weight:400;
+      font-size:clamp(2.7rem,1.6rem + 4.4vw,5rem);
+      letter-spacing:-.02em;margin:6px 0 24px;
+    }
+    .hero-copy h1 em{font-style:italic;color:var(--gold-bright);font-weight:500;}
+    .hero-lead{font-size:clamp(1.05rem,1rem + .4vw,1.28rem);color:var(--cream-dim);max-width:34ch;margin-bottom:34px;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+    .hero-meta{display:flex;align-items:center;gap:18px;margin-top:30px;color:var(--cream-dim);font-size:14px;font-weight:600;}
+    .hero-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-bright);}
+    .hero-meta strong{color:var(--cream);}
+
+    .hero-book{position:relative;display:flex;justify-content:center;}
+    .hero-book .glow{
+      position:absolute;width:130%;height:130%;top:-15%;left:-15%;
+      background:radial-gradient(circle at 50% 45%,rgba(226,172,68,.35),transparent 62%);
+      filter:blur(6px);
+    }
+    .hero-book img{
+      position:relative;width:min(330px,72%);
+      filter:drop-shadow(0 40px 55px rgba(0,0,0,.55));
+      transform:rotate(-3deg);
+      transition:transform .6s var(--ease);
+    }
+    .hero-book:hover img{transform:rotate(0deg) translateY(-6px);}
+
+    /* =================== PILLARS =================== */
+    .pillars{background:var(--paper);}
+    .pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:14px;}
+    .pillar{
+      background:#fff;border:1px solid var(--line);border-radius:var(--r);
+      padding:38px 32px;transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+    }
+    .pillar:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+    .pillar .mark{width:34px;height:34px;color:var(--gold);margin-bottom:20px;}
+    .pillar h3{margin-bottom:10px;}
+    .pillar p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.65;}
+
+    /* =================== ABOUT BOOK =================== */
+    .about{background:var(--paper-2);}
+    .about-grid{display:grid;grid-template-columns:.62fr 1fr;gap:64px;align-items:start;}
+    .about-cover{position:relative;}
+    .about-cover .frame{position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--gold);border-radius:var(--r);z-index:0;}
+    .about-cover img{position:relative;z-index:1;border-radius:var(--r);box-shadow:var(--shadow);}
+    .about-lead{font-family:'Fraunces',serif;font-size:clamp(1.3rem,1.1rem + 1vw,1.65rem);line-height:1.45;color:var(--ink);font-weight:400;margin-bottom:36px;}
+    .about-items{display:grid;gap:26px;}
+    .about-item{padding-left:26px;border-left:2px solid var(--gold);}
+    .about-item h3{font-size:1.25rem;margin-bottom:6px;}
+    .about-item p{margin:0;color:var(--muted);}
+
+    /* =================== LOOK INSIDE =================== */
+    .inside{background:var(--paper);}
+    .inside-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px;}
+    .inside-head p{max-width:46ch;color:var(--muted);margin:8px 0 0;}
+    .gallery{
+      display:flex;gap:22px;overflow-x:auto;padding:8px 4px 24px;
+      scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    }
+    .gallery::-webkit-scrollbar{height:8px;}
+    .gallery::-webkit-scrollbar-thumb{background:var(--paper-3);border-radius:20px;}
+    .gallery a{
+      flex:0 0 auto;width:min(340px,78vw);scroll-snap-align:center;
+      border-radius:var(--r);overflow:hidden;position:relative;
+      box-shadow:var(--shadow-soft);transition:transform .4s var(--ease);
+      background:#fff;
+    }
+    .gallery a:hover{transform:translateY(-5px);}
+    .gallery a::after{
+      content:"\f00e";font-family:"Font Awesome 5 Free";font-weight:900;
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      color:#fff;font-size:26px;background:rgba(27,20,16,.55);opacity:0;transition:opacity .35s var(--ease);
+    }
+    .gallery a:hover::after{opacity:1;}
+    .gallery img{width:100%;height:100%;object-fit:cover;}
+
+    /* =================== COMPANION =================== */
+    .companion{background:var(--ink-2);color:var(--cream);position:relative;overflow:hidden;}
+    .companion .hero-mane{opacity:.1;top:50%;left:-10%;right:auto;width:min(560px,60vw);animation:spin 220s linear infinite reverse;}
+    .companion-grid{position:relative;z-index:2;display:grid;grid-template-columns:.55fr 1fr;gap:56px;align-items:center;}
+    .companion-cover img{border-radius:var(--r);box-shadow:0 40px 70px -30px rgba(0,0,0,.7);}
+    .companion h2{color:var(--cream);}
+    .companion .tag{display:inline-flex;align-items:center;gap:9px;background:rgba(226,172,68,.14);color:var(--gold-bright);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:50px;margin-bottom:20px;}
+    .companion-lead{color:var(--cream-dim);font-size:1.12rem;margin:18px 0 26px;max-width:52ch;}
+    .companion-list{display:grid;gap:14px;margin-bottom:32px;}
+    .companion-list li{display:flex;gap:14px;align-items:flex-start;color:var(--cream-dim);}
+    .companion-list .mark{width:20px;height:20px;color:var(--gold-bright);flex:none;margin-top:5px;}
+    .companion-list b{color:var(--cream);font-weight:700;}
+
+    /* =================== AUTHOR =================== */
+    .author{background:var(--paper);}
+    .author-grid{display:grid;grid-template-columns:.85fr 1fr;gap:64px;align-items:start;}
+    .author-portrait{position:relative;}
+    .author-portrait .frame{position:absolute;inset:-16px 16px 16px -16px;border:1.5px solid var(--ink);border-radius:var(--r);z-index:0;}
+    .author-portrait img{position:relative;z-index:1;border-radius:var(--r);box-shadow:var(--shadow);}
+    .author h2{margin:4px 0 18px;}
+    .author p{color:var(--body);margin:0 0 18px;}
+    .author p:last-child{margin-bottom:0;}
+    .author .socials{display:flex;gap:10px;margin-top:26px;}
+    .author .socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);}
+    .author .socials a:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:translateY(-3px);}
+
+    /* =================== BIG CTA =================== */
+    .cta{background:var(--ink);color:var(--cream);text-align:center;position:relative;overflow:hidden;}
+    .cta .hero-mane{top:50%;left:50%;right:auto;transform:translate(-50%,-50%);opacity:.13;width:min(680px,86vw);}
+    @keyframes spinc{to{transform:translate(-50%,-50%) rotate(360deg);}}
+    .cta .hero-mane{animation:spinc 200s linear infinite;}
+    .cta-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+    .cta h2{color:var(--cream);font-weight:400;font-size:clamp(2.1rem,1.4rem + 3vw,3.4rem);margin:18px 0 14px;}
+    .cta h2 em{font-style:italic;color:var(--gold-bright);}
+    .cta p{color:var(--cream-dim);margin:0 auto 34px;max-width:46ch;}
+
+    /* =================== SUBSCRIBE + CONTACT =================== */
+    .engage{background:var(--paper-2);}
+    .engage-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(30px,4vw,48px);}
+    .card .eyebrow{margin-bottom:16px;}
+    .card h3{margin-bottom:10px;}
+    .card > p{color:var(--muted);margin:0 0 26px;font-size:15.5px;}
+    .field{margin-bottom:14px;}
+    .field input,.field textarea{
+      width:100%;font-family:'Mulish',sans-serif;font-size:15.5px;color:var(--ink);
+      background:var(--paper);border:1.5px solid transparent;border-radius:var(--r-sm);
+      padding:15px 18px;transition:border-color .25s var(--ease),background .25s var(--ease);
+    }
+    .field textarea{resize:vertical;min-height:120px;}
+    .field input::placeholder,.field textarea::placeholder{color:#9c8c73;}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+    .form-msg{display:none;margin-top:14px;font-weight:700;color:var(--gold-deep);}
+    .card .btn{width:100%;}
+
+    /* =================== FOOTER =================== */
+    .footer{background:var(--ink);color:var(--cream-dim);padding:74px 0 0;}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:44px;padding-bottom:56px;}
+    .footer-brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;font-size:22px;color:var(--cream);margin-bottom:16px;}
+    .footer-brand .mark{width:26px;height:26px;color:var(--gold-bright);}
+    .footer p{margin:0;line-height:1.7;}
+    .footer h5{color:var(--cream);font-family:'Mulish',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:12.5px;margin:0 0 18px;}
+    .footer-col a{display:inline-block;padding:5px 0;color:var(--cream-dim);}
+    .footer-col a:hover{color:var(--gold-bright);}
+    .footer .socials{display:flex;gap:10px;margin-top:18px;}
+    .footer .socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-cream);display:flex;align-items:center;justify-content:center;color:var(--cream-dim);}
+    .footer .socials a:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+    .footer-btm{border-top:1px solid var(--line-cream);text-align:center;padding:24px 0;font-size:14.5px;}
+    .footer-btm .current-year{color:var(--gold-bright);}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+    .reveal.in{opacity:1;transform:none;}
+
+    /* =================== CHATBOT (Ari) =================== */
+    .chat-icon{position:fixed;bottom:24px;right:24px;background:var(--gold);color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:9999;box-shadow:0 12px 28px -10px rgba(192,132,29,.8);font-size:24px;transition:transform .3s var(--ease),background .3s var(--ease);}
+    .chat-icon:hover{transform:translateY(-3px) scale(1.04);background:var(--gold-deep);}
+    .chat-window{display:none;position:fixed;bottom:96px;right:24px;width:330px;height:440px;background:var(--paper);border-radius:18px;box-shadow:0 30px 60px -20px rgba(27,20,16,.5);z-index:10000;overflow:hidden;border:1px solid var(--line);flex-direction:column;}
+    .chat-header{background:var(--ink);color:var(--cream);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;font-family:'Fraunces',serif;font-size:17px;font-weight:600;}
+    .chat-header .who{display:flex;align-items:center;gap:9px;}
+    .chat-header .who .mark{width:20px;height:20px;color:var(--gold-bright);}
+    .chat-body{flex-grow:1;overflow-y:auto;padding:14px;background:var(--paper);}
+    .message{margin-bottom:10px;padding:10px 14px;border-radius:14px;max-width:78%;word-wrap:break-word;font-size:14.5px;line-height:1.5;}
+    .message.user{background:var(--gold);color:#fff;margin-left:auto;border-bottom-right-radius:4px;}
+    .message.bot{background:#fff;color:var(--body);border:1px solid var(--line);border-bottom-left-radius:4px;}
+    .chat-footer{padding:12px;background:#fff;display:flex;gap:10px;align-items:center;border-top:1px solid var(--line);}
+    #user-message{flex-grow:1;padding:11px 14px;border:1px solid var(--line);border-radius:22px;font-size:15px;font-family:'Mulish',sans-serif;}
+    #user-message:focus{outline:none;border-color:var(--gold);}
+    .send-message{display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--cream);border:none;border-radius:50%;cursor:pointer;width:42px;height:42px;font-size:17px;flex:none;transition:background .3s var(--ease);}
+    .send-message:hover{background:var(--gold);}
+    .typing-indicator{display:none;padding:0 16px 6px;color:var(--muted);font-size:12px;}
+    .close-chat{background:none;border:none;color:var(--cream);font-size:22px;cursor:pointer;line-height:1;}
+    .chat-body::-webkit-scrollbar{width:6px;}
+    .chat-body::-webkit-scrollbar-thumb{background:var(--paper-3);border-radius:10px;}
+
+    /* =================== RESPONSIVE =================== */
+    @media (max-width:920px){
+      .hero-grid,.about-grid,.companion-grid,.author-grid,.engage-grid{grid-template-columns:1fr;}
+      .hero-grid{gap:40px;}
+      .hero-book{order:-1;}
+      .hero-book img{width:min(260px,62%);}
+      .about-cover{max-width:340px;margin:0 auto;}
+      .author-portrait{max-width:380px;}
+      .pillars-grid{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media (max-width:680px){
+      /* full-screen overlay menu */
+      .nav-links{
+        position:fixed;inset:0;width:100%;height:100vh;height:100dvh;
+        background:var(--ink);background-image:radial-gradient(120% 80% at 80% 12%,rgba(226,172,68,.16),transparent 55%);
+        flex-direction:column;align-items:center;justify-content:center;gap:4px;
+        padding:96px 32px 40px;margin:0;z-index:990;
+        opacity:0;visibility:hidden;transform:translateY(-12px);
+        transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s var(--ease);
+      }
+      .nav-links.open{opacity:1;visibility:visible;transform:none;}
+      .nav-links li{width:100%;max-width:340px;text-align:center;border-bottom:1px solid var(--line-cream);}
+      .nav-links li:last-child{border-bottom:0;margin-top:22px;}
+      .nav-links a,.nav.scrolled .nav-links a,.nav.solid .nav-links a{
+        display:block;font-size:26px;font-family:'Fraunces',serif;font-weight:500;
+        color:var(--cream);padding:18px 0;letter-spacing:-.01em;
+      }
+      .nav-links a:hover,.nav.scrolled .nav-links a:hover,.nav.solid .nav-links a:hover{color:var(--gold-bright);}
+      .nav-links .nav-cta,.nav.scrolled .nav-links .nav-cta,.nav.solid .nav-links .nav-cta{
+        display:inline-flex;font-family:'Mulish',sans-serif;font-size:14px;color:#fff;
+        padding:16px 34px;width:auto;
+      }
+      .nav-toggle{display:block;z-index:1001;}
+      /* keep the bar blended with the dark overlay while open */
+      .nav.menu-open{background:transparent;box-shadow:none;backdrop-filter:none;}
+      .nav.menu-open .brand{color:var(--cream);}
+      .nav.menu-open .brand .mark{color:var(--gold-bright);}
+      .nav.menu-open .nav-toggle{color:var(--cream);}
+      .nav-scrim{display:none;}
+      .hero{padding:120px 0 84px;}
+      .footer-grid{grid-template-columns:1fr;gap:34px;}
+      .hero-meta{flex-wrap:wrap;gap:10px 16px;}
+      .eyebrow{flex-wrap:wrap;line-height:1.5;}
+      .inside-head{flex-direction:column;align-items:flex-start;}
+    }
+    @media (max-width:480px){
+      .wrap{padding:0 18px;}
+      .section{padding:64px 0;}
+      .hero{padding:108px 0 72px;}
+      .hero-actions{flex-direction:column;align-items:stretch;}
+      .hero-actions .btn{width:100%;}
+      .cta-inner .btn,.companion .btn,.about .btn{width:100%;}
+      .btn{padding:16px 24px;}
+      .pillar{padding:30px 24px;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *{animation:none !important;}
+      html{scroll-behavior:auto;}
+      .reveal{opacity:1;transform:none;}
+    }
+  </style>
+  {% block extra_css %}{% endblock %}
 </head>
 
-<body id="top-header">
+<body id="top-header" class="{% block body_class %}{% endblock %}">
 
-  <!-- Include Header -->
-  
-  {% include 'myApp/ari.html' %}
-  <!-- Main Content Block -->
-  {% block content %}
+  <!-- reusable marks -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="-32 -32 64 64">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="13.0" y1="0.0" x2="27.68" y2="0.0"/><line x1="12.67" y1="2.89" x2="27.28" y2="6.23"/><line x1="11.71" y1="5.64" x2="23.39" y2="11.26"/><line x1="10.16" y1="8.11" x2="21.57" y2="17.2"/><line x1="8.11" y1="10.16" x2="18.3" y2="22.95"/><line x1="5.64" y1="11.71" x2="11.34" y2="23.54"/><line x1="2.89" y1="12.67" x2="5.15" y2="22.58"/><line x1="0.0" y1="13.0" x2="0.0" y2="24.91"/><line x1="-2.89" y1="12.67" x2="-5.74" y2="25.15"/><line x1="-5.64" y1="11.71" x2="-10.13" y2="21.03"/><line x1="-8.11" y1="10.16" x2="-14.93" y2="18.72"/><line x1="-10.16" y1="8.11" x2="-21.99" y2="17.54"/><line x1="-11.71" y1="5.64" x2="-25.86" y2="12.45"/><line x1="-12.67" y1="2.89" x2="-25.55" y2="5.83"/><line x1="-13.0" y1="0.0" x2="-27.06" y2="0.0"/><line x1="-12.67" y1="-2.89" x2="-28.06" y2="-6.4"/><line x1="-11.71" y1="-5.64" x2="-23.24" y2="-11.19"/><line x1="-10.16" y1="-8.11" x2="-17.67" y2="-14.09"/><line x1="-8.11" y1="-10.16" x2="-15.22" y2="-19.08"/><line x1="-5.64" y1="-11.71" x2="-11.31" y2="-23.48"/><line x1="-2.89" y1="-12.67" x2="-5.36" y2="-23.47"/><line x1="-0.0" y1="-13.0" x2="-0.0" y2="-24.39"/><line x1="2.89" y1="-12.67" x2="6.34" y2="-27.76"/><line x1="5.64" y1="-11.71" x2="12.69" y2="-26.34"/><line x1="8.11" y1="-10.16" x2="16.39" y2="-20.56"/><line x1="10.16" y1="-8.11" x2="20.62" y2="-16.44"/><line x1="11.71" y1="-5.64" x2="25.31" y2="-12.19"/><line x1="12.67" y1="-2.89" x2="24.86" y2="-5.67"/><circle cx="0" cy="0" r="6.5" fill="currentColor" stroke="none"/></g>
+    </symbol>
+  </svg>
 
-  <!-- Content will be injected here by child templates -->
-   <!-- Floating Chatbot -->
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav {% block nav_extra %}{% endblock %}" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="{% url 'index' %}"><svg class="mark"><use href="#mark"/></svg> The Lion You Don't See</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{% url 'index' %}#book">The Book</a></li>
+        <li><a href="{% url 'index' %}#about">About</a></li>
+        <li><a href="{% url 'index' %}#companion">Companion</a></li>
+        <li><a href="{% url 'index' %}#author">Author</a></li>
+        <li><a href="{% url 'index' %}#contact">Contact</a></li>
+        <li><a href="https://www.amazon.com/dp/B0DQVGHL8Y" target="_blank" rel="noopener" class="btn btn-gold nav-cta"><i class="fab fa-amazon"></i> Get the book</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
 
+  {% block content %}{% endblock %}
 
-  {% endblock content %}
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand"><svg class="mark"><use href="#mark"/></svg> The Lion You Don't See</div>
+          <p>More than a book — an invitation to explore the strength within you. Through stories of courage and resilience, discover the lion waiting to be unleashed in your life.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/iriseupfoundation" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="{% url 'index' %}#about">About the book</a><br>
+          <a href="{% url 'index' %}#companion">Companion book</a><br>
+          <a href="{% url 'index' %}#author">About the author</a><br>
+          <a href="{% url 'index' %}#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Have a question?</h5>
+          <a href="mailto:hello@iriseupfoundation.org">hello@iriseupfoundation.org</a>
+          <p style="margin-top:18px"><a href="{% url 'support' %}" class="btn btn-ghost-cream" style="padding:11px 22px;font-size:12px">Support</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-btm">
+      <div class="wrap">&copy; <span class="current-year"></span> iRiseUp Foundation. All rights reserved.</div>
+    </div>
+  </footer>
 
-  <!-- Include Footer -->
-  
+  <!-- ===================== CHATBOT (Ari) ===================== -->
+  <div id="chatbot-container">
+    <div id="chat-icon" class="chat-icon"><i class="fas fa-comments"></i></div>
+    <div id="chat-window" class="chat-window">
+      <div class="chat-header">
+        <span class="who"><svg class="mark"><use href="#mark"/></svg> Ari</span>
+        <button id="close-chat" class="close-chat" aria-label="Close chat">&times;</button>
+      </div>
+      <div class="chat-body" id="chat-body"></div>
+      <div id="typing-indicator" class="typing-indicator">Ari is typing…</div>
+      <div class="chat-footer">
+        <input type="text" id="user-message" placeholder="Type your message…">
+        <button id="send-message" class="send-message" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Structured data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Book",
       "name": "The Lion You Don't See",
-      "author": {
-        "@type": "Person",
-        "name": "Maria Gregory"
-      },
+      "author": { "@type": "Person", "name": "Maria Gregory" },
       "description": "A heartfelt story of courage, faith, and self-discovery. Perfect as a holiday gift, this book inspires readers to find their inner strength.",
       "image": "https://www.thelionyoudontsee.com/static/assets/images/about/book1.png",
       "url": "https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B0DL5BFWTS",
@@ -74,18 +485,85 @@
       }
     }
   </script>
-    
-  <!-- Essential Scripts -->
-  <script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'assets/plugins/bootstrap/js/popper.min.js' %}"></script>
-  <script src="{% static 'assets/plugins/counterup/waypoint.js' %}"></script>
-  <script src="{% static 'assets/plugins/counterup/jquery.counterup.min.js' %}"></script>
-  <script src="{% static 'assets/plugins/owl-carousel/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'assets/plugins/magnific-popup/jquery.magnific-popup.js' %}"></script>
-  <script src="{% static 'assets/plugins/slick-carousel/slick/slick.min.js' %}"></script>
-  <script src="{% static 'assets/js/contact.js' %}"></script>
-  <script src="{% static 'assets/js/theme.js' %}"></script>
-  
+
+  <script>
+    // year
+    document.querySelectorAll('.current-year').forEach(el => el.textContent = new Date().getFullYear());
+
+    // nav scroll state (skip toggling on pages that force a solid nav)
+    const nav = document.getElementById('nav');
+    if (nav && !nav.classList.contains('solid')) {
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+    }
+
+    // mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navScrim = document.getElementById('navScrim');
+    if (navToggle && navLinks) {
+      const setMenu = (open) => {
+        navLinks.classList.toggle('open', open);
+        if (nav) nav.classList.toggle('menu-open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      };
+      navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+      if (navScrim) navScrim.addEventListener('click', () => setMenu(false));
+      window.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+      // reset menu state if resized up to desktop
+      window.addEventListener('resize', () => { if (window.innerWidth > 680) setMenu(false); });
+    }
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // chatbot (Ari)
+    document.addEventListener('DOMContentLoaded', function () {
+      const chatIcon = document.getElementById('chat-icon');
+      const chatWindow = document.getElementById('chat-window');
+      const closeChat = document.getElementById('close-chat');
+      const sendMessage = document.getElementById('send-message');
+      const chatBody = document.getElementById('chat-body');
+      const userMessageInput = document.getElementById('user-message');
+      const typingIndicator = document.getElementById('typing-indicator');
+      if (!chatIcon) return;
+
+      const greet = () => { if (!chatBody.innerHTML) chatBody.innerHTML += `<div class="message bot">Hi there! I'm Ari. Is there anything I can help you with today?</div>`; };
+      chatIcon.addEventListener('click', () => { chatWindow.style.display = 'flex'; greet(); chatBody.scrollTop = chatBody.scrollHeight; });
+      closeChat.addEventListener('click', () => { chatWindow.style.display = 'none'; });
+
+      const send = async () => {
+        const userMessage = userMessageInput.value.trim();
+        if (!userMessage) return;
+        chatBody.innerHTML += `<div class="message user">${userMessage}</div>`;
+        userMessageInput.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+        typingIndicator.style.display = 'block';
+        try {
+          const response = await fetch('{% url "get_response" %}', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userMessage })
+          });
+          const data = await response.json();
+          typingIndicator.style.display = 'none';
+          chatBody.innerHTML += `<div class="message bot">${(data.response||'').replace(/\n/g,'<br>')}</div>`;
+        } catch (error) {
+          typingIndicator.style.display = 'none';
+          chatBody.innerHTML += `<div class="message bot">Sorry, something went wrong. Please try again later.</div>`;
+          console.error('Error:', error);
+        }
+        chatBody.scrollTop = chatBody.scrollHeight;
+      };
+      sendMessage.addEventListener('click', send);
+      userMessageInput.addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
+    });
+  </script>
+  {% block extra_js %}{% endblock %}
 </body>
 </html>
