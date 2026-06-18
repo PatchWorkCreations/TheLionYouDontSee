@@ -1,0 +1,15 @@
+# The Django app lives in the myProject/ subdirectory.
+# This explicit config overrides Nixpacks' auto "subdirectory" detection,
+# which otherwise runs install/start from the repo root and fails to find
+# myProject/requirements.txt. All commands here are relative to the repo root.
+
+[phases.setup]
+nixPkgs = ["python3", "gcc"]
+
+[phases.install]
+cmds = [
+  "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r myProject/requirements.txt",
+]
+
+[start]
+cmd = "cd myProject && /opt/venv/bin/gunicorn myProject.wsgi:application --bind 0.0.0.0:$PORT --log-file -"
